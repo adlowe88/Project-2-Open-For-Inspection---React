@@ -1,10 +1,13 @@
 import React, { PureComponent as Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class OpenForInspection extends Component {
   render() {
     return (
       <div>
-      <h1>OpenForInspection coming soon</h1>
+      <h1><Link to="/">OpenForInspection</Link></h1>
+      <p>Property</p>
+      <p>Search</p>
       </div>
     );
   }
