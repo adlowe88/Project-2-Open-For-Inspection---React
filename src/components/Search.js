@@ -1,5 +1,7 @@
 import React, { PureComponent as Component } from 'react';
 
+import Results from './Results';
+
 class Search extends Component {
   render() {
     return (
