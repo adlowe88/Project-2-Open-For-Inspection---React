@@ -16,11 +16,11 @@ class Search extends Component {
     this.fetchProperties = this.fetchProperties.bind(this);
   }
 
-  fetchProperties( bedrooms, bathrooms ) {
+  fetchProperties( address, landsize, bedrooms, bathrooms, private_parking, expected_price ) {
     axios.get( SERVER_URL ).then( results => {
       const allProperties = results.data;
       console.log( allProperties );
-      let queriedProperties = allProperties.filter( property => _( flight ).isMatch( { bedrooms: bedrooms, bathrooms: bathrooms } )
+      let queriedProperties = allProperties.filter( property => _( flight ).isMatch( { address: address, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price } )
     );
     if ( _( queriedProperties ).isEmpty() ) {
       queriedProperties = allProperties;
@@ -45,13 +45,30 @@ class Search extends Component {
 class PropertySearch extends Component {
   constructor( props ) {
     super( props );
-    this.state = { bedrooms: '', bathroom: '' };
+    this.state = { address: '', landsize: '', bedrooms: '', bathroom: '', private_parking: '', expected_price: '' };
+
+    this._handleChangeAddress = this._handleChangeAddress.bind(this);
+
+    this._handleChangeLandsize = this._handleChangeLandsize.bind(this);
 
     this._handleChangeBedrooms = this._handleChangeBedrooms.bind(this);
 
     this._handleChangeBathrooms = this._handleChangeBathrooms.bind(this);
 
+    this._handleChangePrivateParking = this._handleChangePrivateParking.bind(this);
+
+    this._handleChangeExpectedPrice = this._handleChangeExpectedPrice.bind(this);
+
     this._handleSubmit = this._handleSubmit.bind(this);
+  }
+
+  _handleChangeAddress(e) {
+    this.setState( { address: e.target.value.toUpperCase()
+    } );
+  }
+
+  _handleChangeLandsize(e) {
+    this.setState( { landsize: e.target.value.toUpperCase() } );
   }
 
   _handleChangeBedrooms(e) {
@@ -60,6 +77,14 @@ class PropertySearch extends Component {
 
   _handleChangeBathrooms(e) {
     this.setState( { bathrooms: e.target.value.toUpperCase() } );
+  }
+
+  _handleChangePrivateParking(e) {
+    this.setState( { private_parking: e.target.value.toUpperCase() } );
+  }
+
+  _handleChangeExpectedPrice(e) {
+    this.setState( { expected_price: e.target.value.toUpperCase() } );
   }
 
   _handleSubmit(e) {
@@ -71,8 +96,18 @@ class PropertySearch extends Component {
   render() {
     return (
       <form onSubmit={ this._handleSubmit }>
+        <input type="text" placeholder="address" onChange={ this._handleChangeAddress } />
+
+        <input type="text" placeholder="landsize" onChange={ this._handleChangeLandsize } />
+
         <input type="text" placeholder="bedrooms" onChange={ this._handleChangeBedrooms } />
+
         <input type="text" placeholder="bathrooms" onChange={ this._handleChangeBathrooms } />
+
+        <input type="text" placeholder="private_parking" onChange={ this._handleChangePrivateParking } />
+
+        <input type="text" placeholder="expected_price" onChange={ this._handleChangeExpectedPrice } />
+
         <input type="submit" value="Search Properties" />
       </form>
     );
