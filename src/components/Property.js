@@ -20,7 +20,7 @@ class PropertiesForm extends Component {
 
     this._handleChangeBathrooms = this._handleChangeBathrooms.bind(this);
 
-    this._handleChangePrivateParking = this._handlePrivateParking.bind(this);
+    this._handleChangePrivateParking = this._handleChangePrivateParking.bind(this);
 
     this._handleChangeExpectedPrice = this._handleChangeExpectedPrice.bind(this);
 
@@ -105,7 +105,8 @@ class Property extends Component {
     return (
       <div>
         <h1>properties website</h1>
-        <p>Link to="/search"></Link></p>
+        <p><Link to="/property">Property</Link></p>
+        <p><Link to="/search">Search</Link></p>
         <PropertiesForm onSubmit={ this.createProperty }/>
         <Results properties={ this.state.properties }/>
       </div>

@@ -20,7 +20,7 @@ class Search extends Component {
     axios.get( SERVER_URL ).then( results => {
       const allProperties = results.data;
       console.log( allProperties );
-      let queriedProperties = allProperties.filter( property => _( flight ).isMatch( { address: address, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price } )
+      let queriedProperties = allProperties.filter( property => _( property ).isMatch( { address: address, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price } )
     );
     if ( _( queriedProperties ).isEmpty() ) {
       queriedProperties = allProperties;
