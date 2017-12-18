@@ -11,8 +11,8 @@ function Results(props) {
         <span className="results-landsize">Landsize</span>
         <span className="results-bedroom">Bedrooms</span>
         <span className="results-bathroom">Bathrooms</span>
-        <span className="results-private_parking">Private parking</span>
-        <span className="results-expected_price">Expected price</span>
+        <span className="results-privateparking">Private parking</span>
+        <span className="results-expectedprice">Expected price</span>
       </div>
 
       { props.properties.map( f =>
@@ -21,13 +21,13 @@ function Results(props) {
 
           <span className="results-landsize">{ f.landsize }</span>
 
-          <span className="results-bedroom">{ f.bedroom }</span>
+          <span className="results-bedroom">{ f.bedrooms }</span>
 
-          <span className="results-bathroom">{ f.bathroom }</span>
+          <span className="results-bathroom">{ f.bathrooms }</span>
 
-          <span className="results-private_parking">{ f.private_parking }</span>
+          <span className="results-privateparking">{ f.private_parking + '' }</span>
 
-          <span className="results-expected_price">{ f.expected_price }</span>
+          <span className="results-expectedprice">{ f.expected_price }</span>
         </div>
       )}
     </div>

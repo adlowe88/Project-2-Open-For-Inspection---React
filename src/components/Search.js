@@ -17,7 +17,7 @@ class Search extends Component {
   }
 
   fetchProperties( address, landsize, bedrooms, bathrooms, private_parking, expected_price ) {
-    axios.get( SERVER_URL ).then( results => {
+    axios.get(SERVER_URL).then( results => {
       const allProperties = results.data;
       console.log( allProperties );
       let queriedProperties = allProperties.filter( property => _( property ).isMatch( { address: address, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price } )
@@ -89,14 +89,22 @@ class PropertySearch extends Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit( this.state.bedrooms, this.state.bathrooms );
+    this.props.onSubmit( this.state.address, this.state.landsize, this.state.bedrooms, this.state.bathrooms, this.state.private_parking, this.state.expected_price );
   }
 
 
   render() {
     return (
       <form onSubmit={ this._handleSubmit }>
-        <input type="text" placeholder="address" onChange={ this._handleChangeAddress } />
+
+        <select value={this.state.address} onChange={ this._handleChangeAddress }>
+          <option value="">Select Suburb</option>
+          <option value="Asquith">Asquith</option>
+          <option value="Bondi">Bondi</option>
+          <option value="Fairfield">Fairfield</option>
+          <option value="Marrickville">Marrickville</option>
+          <option value="Newtown">Newtown</option>
+        </select>
 
         <input type="text" placeholder="landsize" onChange={ this._handleChangeLandsize } />
 
@@ -104,9 +112,9 @@ class PropertySearch extends Component {
 
         <input type="text" placeholder="bathrooms" onChange={ this._handleChangeBathrooms } />
 
-        <input type="text" placeholder="private_parking" onChange={ this._handleChangePrivateParking } />
+        <input type="text" placeholder="private parking" onChange={ this._handleChangePrivateParking } />
 
-        <input type="text" placeholder="expected_price" onChange={ this._handleChangeExpectedPrice } />
+        <input type="text" placeholder="expected price" onChange={ this._handleChangeExpectedPrice } />
 
         <input type="submit" value="Search Properties" />
       </form>
