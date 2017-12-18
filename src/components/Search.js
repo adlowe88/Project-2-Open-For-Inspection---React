@@ -5,6 +5,7 @@ import axios from 'axios';
 import _ from 'underscore';
 
 import Results from './Results';
+import MapResults from './MapResults';
 
 const SERVER_URL = 'http://localhost:5000/properties.json'
 
@@ -37,6 +38,7 @@ class Search extends Component {
         <h2>Search for a property</h2>
         <PropertySearch onSubmit={  this.fetchProperties }/>
         <Results properties={ this.state.properties }/>
+        <MapResults />
       </React.Fragment>
     );
   }
