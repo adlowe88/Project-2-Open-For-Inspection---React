@@ -68,9 +68,9 @@ class PropertiesForm extends Component {
 
         <input type="text" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms"/>
 
-        <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="private_parking"/>
+        <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="private parking"/>
 
-        <input type="text" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected_price"/>
+        <input type="text" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected price"/>
 
         <input type="submit" value="create property"/>
       </form>
@@ -96,8 +96,8 @@ class Property extends Component {
 
   createProperty(address, landsize, bedrooms, bathrooms, private_parking, expected_price) {
     axios.post(SERVER_URL, { address: address, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price }).then(results =>
-    {
-      this.setState({ properties: [results.data, ...this.state.properties] })
+      {
+      this.setState({ properties: [results.data ...this.state.properties] })
     });
   }
 

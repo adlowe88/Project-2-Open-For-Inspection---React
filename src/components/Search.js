@@ -97,14 +97,16 @@ class PropertySearch extends Component {
     return (
       <form onSubmit={ this._handleSubmit }>
 
-        <select value={this.state.address} onChange={ this._handleChangeAddress }>
-          <option value="">Select Suburb</option>
-          <option value="Asquith">Asquith</option>
-          <option value="Bondi">Bondi</option>
-          <option value="Fairfield">Fairfield</option>
-          <option value="Marrickville">Marrickville</option>
-          <option value="Newtown">Newtown</option>
-        </select>
+        // <select value={this.state.address} onChange={ this._handleChangeAddress }>
+        //   <option value="">Select Suburb</option>
+        //   <option value="Asquith">Asquith</option>
+        //   <option value="Bondi">Bondi</option>
+        //   <option value="Fairfield">Fairfield</option>
+        //   <option value="Marrickville">Marrickville</option>
+        //   <option value="Newtown">Newtown</option>
+        // </select>
+
+
 
         <input type="text" placeholder="landsize" onChange={ this._handleChangeLandsize } />
 
