@@ -123,9 +123,9 @@ function initMap() {
       },
       {
         featureType: "poi.school",
-        elementType: "labels",
+        elementType: "labels.text",
         stylers: [
-          {color: "#ff001a"},
+          {color: "#ffeb3b"},
           {visibility: "simplified"}
         ]
       },
@@ -143,6 +143,30 @@ function initMap() {
           },
           {
             "visibility": "simplified"
+          }
+        ]
+      },
+      {
+        "featureType": "transit.station.airport",
+        "stylers": [
+          {
+            "visibility": "off"
+          }
+        ]
+      },
+      {
+        "featureType": "transit.station.bus",
+        "stylers": [
+          {
+            "color": "#f79bd5"
+          }
+        ]
+      },
+      {
+        "featureType": "transit.station.rail",
+        "stylers": [
+          {
+            "color": "#3257f3"
           }
         ]
       },
