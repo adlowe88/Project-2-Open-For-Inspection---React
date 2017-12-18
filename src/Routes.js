@@ -5,6 +5,7 @@ import OpenForInspection from './components/OpenForInspection';
 import Property from './components/Property';
 import Search from './components/Search';
 import Results from './components/Results';
+import PredictPrice from './components/PredictPrice';
 
 const Routes = (
   <Router>

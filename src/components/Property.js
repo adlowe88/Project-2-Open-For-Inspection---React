@@ -10,9 +10,11 @@ const SERVER_URL = 'http://localhost:5000/properties.json';
 class PropertiesForm extends Component {
   constructor( props ) {
     super( props );
-    this.state = { address: '', landsize: '', bedrooms: '', bathrooms: '', private_parking: '', expected_price: '' };
+    this.state = { address: '', suburb: '', landsize: '', bedrooms: '', bathrooms: '', private_parking: '', expected_price: '' };
 
     this._handleChangeAddress = this._handleChangeAddress.bind(this);
+
+    this._handleChangeSuburb = this._handleChangeSuburb.bind(this);
 
     this._handleChangeLandsize = this._handleChangeLandsize.bind(this);
 
@@ -29,6 +31,10 @@ class PropertiesForm extends Component {
 
   _handleChangeAddress(e) {
     this.setState( { address: e.target.value } );
+  }
+
+  _handleChangeSuburb(e) {
+    this.setState( { suburb: e.target.value } );
   }
 
   _handleChangeLandsize(e) {
@@ -53,14 +59,17 @@ class PropertiesForm extends Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit( this.state.address, this.state.landsize, this.state.bedrooms, this.state.bathrooms, this.state.private_parking, this.state.expected_price );
-    this.setState( { address: '', landsize: '', bedrooms: '', bathrooms: '', private_parking: '', expected_price: '' } );
+    this.props.onSubmit( this.state.address, this.state.suburb, this.state.landsize, this.state.bedrooms, this.state.bathrooms, this.state.private_parking, this.state.expected_price );
+    this.setState( { address: '', suburb: '', landsize: '', bedrooms: '', bathrooms: '', private_parking: '', expected_price: '' } );
   }
 
   render() {
     return (
       <form onSubmit={this._handleSubmit}>
+
         <input type="text" value={this.state.address} onChange={this._handleChangeAddress} placeholder="address"/>
+
+        <input type="text" value={this.state.suburb} onChange={this._handleChangeSuburb} placeholder="suburb"/>
 
         <input type="text" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="landsize"/>
 
@@ -73,6 +82,7 @@ class PropertiesForm extends Component {
         <input type="text" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected price"/>
 
         <input type="submit" value="create property"/>
+
       </form>
     );
   }
@@ -88,16 +98,16 @@ class Property extends Component {
     this.createProperty = this.createProperty.bind(this);
 
     const fetchProperties = () => {
-      axios.get( SERVER_URL ).then( results =>
+      axios.get(SERVER_URL).then( results =>
       this.setState( { properties: results.data } ) );
     }
     fetchProperties();
   }
 
-  createProperty(address, landsize, bedrooms, bathrooms, private_parking, expected_price) {
-    axios.post(SERVER_URL, { address: address, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price }).then(results =>
+  createProperty(address, suburb, landsize, bedrooms, bathrooms, private_parking, expected_price) {
+    axios.post(SERVER_URL, { address: address, suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price }).then(results =>
       {
-      this.setState({ properties: [results.data ...this.state.properties] })
+      this.setState({ properties: [results.data, ...this.state.properties] })
     });
   }
 
