@@ -5,6 +5,7 @@ import axios from 'axios';
 import _ from 'underscore';
 
 import Results from './Results';
+import MapResults from './MapResults';
 
 const SERVER_URL = 'http://localhost:5000/properties.json'
 
@@ -16,11 +17,11 @@ class Search extends Component {
     this.fetchProperties = this.fetchProperties.bind(this);
   }
 
-  fetchProperties( address, landsize, bedrooms, bathrooms, private_parking, expected_price ) {
+  fetchProperties( suburb, landsize, bedrooms, bathrooms, private_parking, expected_price ) {
     axios.get(SERVER_URL).then( results => {
       const allProperties = results.data;
       console.log( allProperties );
-      let queriedProperties = allProperties.filter( property => _( property ).isMatch( { address: address, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price } )
+      let queriedProperties = allProperties.filter( property => _( property ).isMatch( { suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price } )
     );
     if ( _( queriedProperties ).isEmpty() ) {
       queriedProperties = allProperties;
@@ -37,6 +38,7 @@ class Search extends Component {
         <h2>Search for a property</h2>
         <PropertySearch onSubmit={  this.fetchProperties }/>
         <Results properties={ this.state.properties }/>
+        <MapResults />
       </React.Fragment>
     );
   }
@@ -45,9 +47,9 @@ class Search extends Component {
 class PropertySearch extends Component {
   constructor( props ) {
     super( props );
-    this.state = { address: '', landsize: '', bedrooms: '', bathroom: '', private_parking: '', expected_price: '' };
+    this.state = { suburb: '', landsize: '', bedrooms: '', bathroom: '', private_parking: '', expected_price: '' };
 
-    this._handleChangeAddress = this._handleChangeAddress.bind(this);
+    this._handleChangeSuburb = this._handleChangeSuburb.bind(this);
 
     this._handleChangeLandsize = this._handleChangeLandsize.bind(this);
 
@@ -62,8 +64,8 @@ class PropertySearch extends Component {
     this._handleSubmit = this._handleSubmit.bind(this);
   }
 
-  _handleChangeAddress(e) {
-    this.setState( { address: e.target.value.toUpperCase()
+  _handleChangeSuburb(e) {
+    this.setState( { suburb: e.target.value
     } );
   }
 
@@ -89,7 +91,7 @@ class PropertySearch extends Component {
 
   _handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit( this.state.address, this.state.landsize, this.state.bedrooms, this.state.bathrooms, this.state.private_parking, this.state.expected_price );
+    this.props.onSubmit( this.state.suburb, this.state.landsize, this.state.bedrooms, this.state.bathrooms, this.state.private_parking, this.state.expected_price );
   }
 
 
@@ -97,16 +99,15 @@ class PropertySearch extends Component {
     return (
       <form onSubmit={ this._handleSubmit }>
 
-        // <select value={this.state.address} onChange={ this._handleChangeAddress }>
-        //   <option value="">Select Suburb</option>
-        //   <option value="Asquith">Asquith</option>
-        //   <option value="Bondi">Bondi</option>
-        //   <option value="Fairfield">Fairfield</option>
-        //   <option value="Marrickville">Marrickville</option>
-        //   <option value="Newtown">Newtown</option>
-        // </select>
-
-
+        <select value={this.state.selectValue} onChange={ this._handleChangeSuburb }>
+          <option value="">Select Suburb</option>
+          <option value="Asquith">Asquith</option>
+          <option value="Bondi">Bondi</option>
+          <option value="Fairfield">Fairfield</option>
+          <option value="Marrickville">Marrickville</option>
+          <option value="Newtown">Newtown</option>
+          <option value="Sydney">Sydney</option>
+        </select>
 
         <input type="text" placeholder="landsize" onChange={ this._handleChangeLandsize } />
 

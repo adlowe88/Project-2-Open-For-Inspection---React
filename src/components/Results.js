@@ -8,6 +8,7 @@ function Results(props) {
       <h1>Properties</h1>
       <div className="results-grid headings">
         <span className="results-address">Address</span>
+        <span className="results-suburb">Suburb</span>
         <span className="results-landsize">Landsize</span>
         <span className="results-bedroom">Bedrooms</span>
         <span className="results-bathroom">Bathrooms</span>
@@ -18,6 +19,8 @@ function Results(props) {
       { props.properties.map( f =>
         <div className="results-grid" key={ f.id }>
           <span className="results-address">{ f.address }</span>
+
+          <span className="results-suburb">{ f.suburb }</span>
 
           <span className="results-landsize">{ f.landsize }</span>
 

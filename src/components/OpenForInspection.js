@@ -8,8 +8,8 @@ class OpenForInspection extends Component {
       <div>
 
       <h1><Link to="/">OpenForInspection</Link></h1>
-      <p>Property</p>
-      <p>Search</p>
+      <h3><Link to="/property">Property</Link></h3>
+      <h3><Link to="/search">Search</Link></h3>
       </div>
     );
   }
