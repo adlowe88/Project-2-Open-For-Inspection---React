@@ -97,7 +97,7 @@ class Property extends Component {
   createProperty(address, landsize, bedrooms, bathrooms, private_parking, expected_price) {
     axios.post(SERVER_URL, { address: address, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price }).then(results =>
       {
-      this.setState({ properties: [results.data ...this.state.properties] })
+      this.setState({ properties: [results.data, ...this.state.properties] })
     });
   }
 
