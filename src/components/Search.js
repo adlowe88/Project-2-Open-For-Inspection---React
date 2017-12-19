@@ -35,18 +35,34 @@ class Search extends Component {
   // });
   // }
 
-  fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
-    axios.get(SERVER_URL).then(function (results){
-      let array_properties = [];
-      let allProperties = results.data;
-      console.log(allProperties);
-      for (let i=0; i<results.data.length; i++)
-        if (results.data[i].suburb === suburb && results.data[i].landsize == landsize || results.data[i].landsize === landsize || results.data[i].bedrooms === bedrooms || results.data[i].bathrooms === bathrooms || results.data[i].parking === parking || results.data[i].price === price)
-          array_properties.push(results.data[i]);
-          this.setState({properties : array_properties});
+  // fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
+  //   axios.get(SERVER_URL).then(function (results){
+  //     let array_properties = [];
+  //     for (let i = 0; i < results.data.length; i++) {
+  //       if (results.data[i].suburb === suburb && results.data[i].landsize === landsize ) {
+  //         array_properties.push(results.data[i]);
+  //
+  //         console.log(this.state);
+  //       }
+  //     }
+  // this.setState({properties : array_properties})
+  //   }.bind(this));
+  // }
+
+  fetchProperties( suburb, landsize, bedrooms, bathrooms, parking ) {
+    axios.get(SERVER_URL).then(function (results) {
+      let arrayProperties = [];
+      for (let i = 0; i < results.data.length; i++) {
+        if (_.isMatch(results.data[i], {suburb: suburb, landsize: landsize})) {
+          console.log(`interation = ${results.data[i]}`);
+          arrayProperties.push(results.data[i]);
+          console.log(arrayProperties);
+          // console.log(this.state);
+        }
+      }
+      this.setState({properties : arrayProperties})
     }.bind(this));
   }
-
 
   render() {
     return (
@@ -63,7 +79,7 @@ class Search extends Component {
 class PropertySearch extends Component {
   constructor( props ) {
     super( props );
-    this.state = { suburb: '', landsize: '', bedrooms: '', bathrooms: '', private_parking: '', expected_price: '' };
+    this.state = { suburb: '', landsize: '', bedrooms: '', bathrooms: '', private_parking: '' };
 
     this._handleChangeSuburb = this._handleChangeSuburb.bind(this);
 
@@ -74,8 +90,6 @@ class PropertySearch extends Component {
     this._handleChangeBathrooms = this._handleChangeBathrooms.bind(this);
 
     this._handleChangePrivateParking = this._handleChangePrivateParking.bind(this);
-
-    this._handleChangeExpectedPrice = this._handleChangeExpectedPrice.bind(this);
 
     this._handleSubmit = this._handleSubmit.bind(this);
   }
@@ -101,13 +115,9 @@ class PropertySearch extends Component {
     this.setState( { private_parking: e.target.value } );
   }
 
-  _handleChangeExpectedPrice(e) {
-    this.setState( { expected_price: e.target.value } );
-  }
-
   _handleSubmit(e) {
     e.preventDefault();
-    this.props.onSubmit( this.state.suburb, this.state.landsize, this.state.bedrooms, this.state.bathrooms, this.state.private_parking, this.state.expected_price );
+    this.props.onSubmit( this.state.suburb, this.state.landsize, this.state.bedrooms, this.state.bathrooms, this.state.private_parking );
   }
 
 
@@ -127,13 +137,11 @@ class PropertySearch extends Component {
 
         <input type="text" placeholder="landsize" onChange={ this._handleChangeLandsize } />
 
-        <input type="text" placeholder="bedrooms" onChange={ this._handleChangeBedrooms } />
+        <input type="text" placeholder="bedrooms" onChange={ this._handleChangeBedrooms }  />
 
-        <input type="text" placeholder="bathrooms" onChange={ this._handleChangeBathrooms } />
+        <input type="text" placeholder="bathrooms" onChange={ this._handleChangeBathrooms }  />
 
-        <input type="text" placeholder="private parking" onChange={ this._handleChangePrivateParking } />
-
-        <input type="text" placeholder="expected price" onChange={ this._handleChangeExpectedPrice } />
+        <input type="text" placeholder="private parking" onChange={ this._handleChangePrivateParking }  />
 
         <input type="submit" value="Search Properties" />
       </form>

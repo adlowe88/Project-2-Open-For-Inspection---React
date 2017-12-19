@@ -1,8 +1,9 @@
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 body {
   margin: 50px;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
 }
 
 label {
@@ -31,4 +32,14 @@ label {
 }
 .predict-input{
   width: 100px;
+}
+
+.results-grid span {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+input {
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
 }
