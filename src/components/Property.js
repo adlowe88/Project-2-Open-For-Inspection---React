@@ -100,6 +100,7 @@ class Property extends Component {
     const fetchProperties = () => {
       axios.get(SERVER_URL).then( results =>
       this.setState( { properties: results.data } ) );
+      setTimeout(fetchProperties, 1000);
     }
     fetchProperties();
   }

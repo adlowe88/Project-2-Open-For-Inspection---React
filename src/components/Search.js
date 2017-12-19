@@ -10,25 +10,39 @@ import MapResults from './MapResults';
 const SERVER_URL = 'http://localhost:5000/properties.json'
 
 class Search extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = { properties: [] };
 
     this.fetchProperties = this.fetchProperties.bind(this);
   }
 
+  // fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
+  //
+  //   console.log('searching for property from suburb of', suburb, 'with landsize of', landsize);
+  //   console.log(this.state);
+  //
+  //   axios.get(SERVER_URL).then( results => {
+  //     const allProperties = results.data;
+  //     console.log( allProperties );
+  //     let queriedProperties = allProperties.filter( property => _( allProperties ).isMatch( { suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: parking, expected_price: price } )
+  //   );
+  //   if ( _( queriedProperties ).isEmpty() ) {
+  //     queriedProperties = allProperties;
+  //   }
+  //   console.log( queriedProperties );
+  //   this.setState( { properties: queriedProperties } );
+  // });
+  // }
+
   fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
-    axios.get(SERVER_URL).then( results => {
-      const allProperties = results.data;
-      console.log( allProperties );
-      let queriedProperties = allProperties.filter( property => _( property ).isMatch( { suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: parking, expected_price: price } )
-    );
-    if ( _( queriedProperties ).isEmpty() ) {
-      queriedProperties = allProperties;
-    }
-    console.log( queriedProperties );
-    this.setState( { properties: queriedProperties } );
-  });
+    axios.get(SERVER_URL).then(function (results){
+      let array_properties = [];
+      for (let i=0; i<results.data.length; i++)
+        if (results.data[i].suburb === suburb || results.data[i].landsize === landsize || results.data[i].bedrooms === bedrooms || results.data[i].bathrooms === bathrooms || results.data[i].parking === parking || results.data[i].price === price)
+          array_properties.push(results.data[i]);
+          this.setState({properties : array_properties});
+    }.bind(this));
   }
 
 
