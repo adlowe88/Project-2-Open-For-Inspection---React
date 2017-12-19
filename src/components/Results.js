@@ -45,7 +45,17 @@ function Results(props) {
 
 
 
-      { props.properties.map( f => <h1>{f.address}</h1>) }
+      { props.properties.map( f =>
+        <div className="results-grid" key={ f.id }>
+          <span className="results-address">{ f.address }</span>
+          <span className="results-landsize">{ f.landsize }</span>
+          <span className="results-bedroom">{ f.bedrooms }</span>
+          <span className="results-bathroom">{ f.bathrooms }</span>
+          <span className="results-privateparking">{ f.private_parking + '' }</span>
+          <span className="results-expectedprice">{ f.expected_price }</span>
+        </div>
+      )
+     }
     </div>
   );
 }
