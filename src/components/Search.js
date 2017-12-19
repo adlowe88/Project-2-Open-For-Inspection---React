@@ -38,8 +38,10 @@ class Search extends Component {
   fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
     axios.get(SERVER_URL).then(function (results){
       let array_properties = [];
+      let allProperties = results.data;
+      console.log(allProperties);
       for (let i=0; i<results.data.length; i++)
-        if (results.data[i].suburb === suburb || results.data[i].landsize === landsize || results.data[i].bedrooms === bedrooms || results.data[i].bathrooms === bathrooms || results.data[i].parking === parking || results.data[i].price === price)
+        if (results.data[i].suburb === suburb && results.data[i].landsize == landsize || results.data[i].landsize === landsize || results.data[i].bedrooms === bedrooms || results.data[i].bathrooms === bathrooms || results.data[i].parking === parking || results.data[i].price === price)
           array_properties.push(results.data[i]);
           this.setState({properties : array_properties});
     }.bind(this));
