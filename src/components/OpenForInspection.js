@@ -13,9 +13,9 @@ class OpenForInspection extends Component {
           <Link to="/"><img src={image} alt="logo" /></Link>
           </div>
 
-          <div className="rightnav">home</div>
-
           <div className="rightnav">login</div>
+
+          <div className="rightnav">sign up</div>
 
         </nav>
         <div className = "search-div">

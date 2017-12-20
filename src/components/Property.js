@@ -71,15 +71,15 @@ class PropertiesForm extends Component {
 
         <input type="text" value={this.state.suburb} onChange={this._handleChangeSuburb} placeholder="suburb" required />
 
-        <input type="text" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="landsize" required />
+        <input type="number" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="landsize" required />
 
-        <input type="text" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="bedrooms" required />
+        <input type="number" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="bedrooms" required />
 
-        <input type="text" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms" required />
+        <input type="number" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms" required />
 
         <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="private parking" required />
 
-        <input type="text" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected price" required />
+        <input type="number" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected price" required />
 
         <input type="submit" value="create property"/>
 
