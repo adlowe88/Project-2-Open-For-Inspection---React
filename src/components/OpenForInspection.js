@@ -10,7 +10,7 @@ class OpenForInspection extends Component {
       <div className = "homepage">
         <nav className="fixednav">
           <div className="leftnav">
-          <img src={image} alt="logo" />;
+          <Link to="/"><img src={image} alt="logo" /></Link>
           </div>
 
           <div className="rightnav">home</div>
