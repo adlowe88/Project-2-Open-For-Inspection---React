@@ -2,7 +2,7 @@ import React, { PureComponent as Component } from 'react';
 import ReactDOM from 'react-dom'
 import GoogleApiComponent from './GoogleApiComponent'
 import axios from 'axios';
-import PropertySearcher from './PropertySearcher';
+import Search from './Search';
 
 
 export class Map extends React.Component {

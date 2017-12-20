@@ -1,4 +1,4 @@
-import PropertySearcher from './PropertySearcher';
+import Search from './Search';
 
 export const GoogleApi = function(opts) {
   opts = opts || {}

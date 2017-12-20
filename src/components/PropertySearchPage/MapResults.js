@@ -1,7 +1,7 @@
 import React, { PureComponent as Component } from 'react';
 import { Link } from 'react-router-dom';
 import Container from './Container';
-import PropertySearcher from './PropertySearcher';
+import Search from './Search';
 
 
 

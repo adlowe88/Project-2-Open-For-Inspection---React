@@ -6,7 +6,7 @@ import _ from 'underscore';
 
 import Results from './Results';
 import MapResults from './MapResults';
-import PropertySearcher from './PropertySearcher';
+
 
 const SERVER_URL = 'http://localhost:5000/properties.json'
 

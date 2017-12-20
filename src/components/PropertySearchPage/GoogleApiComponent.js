@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 
 import cache from './ScriptCache.js'
 import GoogleApi from './GoogleAPI.js'
-import PropertySearcher from './PropertySearcher';
+import Search from './Search';
 
 const defaultMapConfig = {}
 export const wrapper = (options) => (WrappedComponent) => {

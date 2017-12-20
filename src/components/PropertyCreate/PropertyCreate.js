@@ -1,4 +1,4 @@
-import React, { PureComponent as Component } from 'react';
+ import React, { PureComponent as Component } from 'react';
 import Property from './Property';
 
 class PropertyCreate extends {
