@@ -3,6 +3,7 @@ import Login from './Login';
 import OpenForInspection from './OpenForInspection';
 import About from './About';
 import Footer from './Footer';
+import PreditPrice from './PredictPrice';
 
 class HomePage extends Component {
   render() {

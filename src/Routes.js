@@ -1,10 +1,10 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
-import OpenForInspection from './components/OpenForInspection';
-import Property from './components/Property';
-import Search from './components/Search';
-import Results from './components/Results';
+import OpenForInspection from './components/Homepage/OpenForInspection';
+import Property from './components/PropertyCreate/Property';
+import Search from './components/PropertySearch/Search';
+import Results from './components/PropertySearch/Results';
 import PredictPrice from './components/PredictPrice';
 
 import PropertySearch from '/components/PropertySearch';
