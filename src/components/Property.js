@@ -67,19 +67,19 @@ class PropertiesForm extends Component {
     return (
       <form onSubmit={this._handleSubmit}>
 
-        <input type="text" value={this.state.address} onChange={this._handleChangeAddress} placeholder="address"/>
+        <input type="text" value={this.state.address} onChange={this._handleChangeAddress} placeholder="address" required />
 
-        <input type="text" value={this.state.suburb} onChange={this._handleChangeSuburb} placeholder="suburb"/>
+        <input type="text" value={this.state.suburb} onChange={this._handleChangeSuburb} placeholder="suburb" required />
 
-        <input type="text" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="landsize"/>
+        <input type="text" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="landsize" required />
 
-        <input type="text" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="bedrooms"/>
+        <input type="text" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="bedrooms" required />
 
-        <input type="text" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms"/>
+        <input type="text" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms" required />
 
-        <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="private parking"/>
+        <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="private parking" required />
 
-        <input type="text" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected price"/>
+        <input type="text" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected price" required />
 
         <input type="submit" value="create property"/>
 
@@ -100,12 +100,13 @@ class Property extends Component {
     const fetchProperties = () => {
       axios.get(SERVER_URL).then( results =>
       this.setState( { properties: results.data } ) );
+      setTimeout(fetchProperties, 1000);
     }
     fetchProperties();
   }
 
-  createProperty(address, suburb, landsize, bedrooms, bathrooms, private_parking, expected_price) {
-    axios.post(SERVER_URL, { address: address, suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price }).then(results =>
+  createProperty(address, suburb, landsize, bedrooms, bathrooms, parking, price) {
+    axios.post(SERVER_URL, { address: address, suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: parking, expected_price: price }).then(results =>
       {
       this.setState({ properties: [results.data, ...this.state.properties] })
     });
