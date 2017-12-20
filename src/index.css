@@ -32,3 +32,13 @@ label {
 .predict-input{
   width: 100px;
 }
+
+.map {
+  height: 300px;
+}
+
+@media screen and (min-width: 1024px){
+    .map {
+        height: 500px;
+    }
+}
