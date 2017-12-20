@@ -4,12 +4,22 @@ body {
   margin: 50px;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
+  background: url('https://i.imgur.com/2nLpELR.jpg');
+  background-size: cover;
 }
 
 label {
 
   font-size: 13px;
 }
+
+/*//////////////////////////////////Home Page/////////////////////////////////*/
+
+.search-div {
+  border: 2px solid black;
+  width: 33%;
+}
+
 
 .predict-form {
   padding: 20px;
