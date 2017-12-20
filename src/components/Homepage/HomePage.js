@@ -7,10 +7,12 @@ import Footer from './Footer';
 class HomePage extends Component {
   render() {
     return (
-      <Login />
-      <OpenForInspection />
-      <About />
-      <Footer />
+      <div className="home-page">
+        <Login />
+        <OpenForInspection />
+        <About />
+        <Footer />
+        </div>
     );
   }
 }
