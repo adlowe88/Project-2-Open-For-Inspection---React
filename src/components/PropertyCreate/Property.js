@@ -2,6 +2,7 @@ import React, { PureComponent as Component } from 'react';
 import { Link } from 'react-router-dom';
 import Results from './Results';
 import { HashRouter as Router, Route } from 'react-router-dom';
+import PropertyCreate from './PropertyCreate';
 
 import axios from 'axios';
 

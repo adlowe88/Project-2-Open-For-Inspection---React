@@ -1,3 +1,5 @@
+import PropertySearch from './PropertySearch';
+
 export const GoogleApi = function(opts) {
   opts = opts || {}
 
