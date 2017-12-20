@@ -12,9 +12,7 @@ class OpenForInspection extends Component {
 
           <div className="rightnav">home</div>
 
-          <div className="rightnav">profile</div>
-
-          <div className="rightnav">contact</div>
+          <div className="rightnav">login</div>
 
         </nav>
         <div className = "search-div">
