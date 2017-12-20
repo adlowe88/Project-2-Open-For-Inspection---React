@@ -8,7 +8,9 @@ class OpenForInspection extends Component {
     return (
       <div className = "homepage">
         <nav className="fixednav">
-          <div className="leftnav">logo</div>
+          <div className="leftnav">
+          logo
+          </div>
 
           <div className="rightnav">home</div>
 

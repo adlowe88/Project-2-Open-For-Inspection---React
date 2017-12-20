@@ -4,8 +4,8 @@ body {
   margin: 50px;
   padding: 0;
   font-family: 'Open Sans', sans-serif;
-  background: url('https://i.imgur.com/2nLpELR.jpg');
-  background-size: cover;
+  /* background: url('https://i.imgur.com/2nLpELR.jpg');
+  background-size: cover; */
 }
 
 label {
@@ -28,6 +28,17 @@ label {
 
 .leftnav {
   flex-grow: 1; /* this is the important bit */
+  padding: 1em;
+}
+
+.rightnav {
+  padding: 1em;
+}
+
+.homepage {
+  background: url('https://i.imgur.com/2nLpELR.jpg');
+  background-size: cover;
+  height: 100%;
 }
 
 /*//////////////////////////////////Home Page/////////////////////////////////*/

@@ -53,7 +53,7 @@ class Search extends Component {
     axios.get(SERVER_URL).then(function (results) {
       let arrayProperties = [];
       for (let i = 0; i < results.data.length; i++) {
-        if ( _.isMatch(results.data[i], {suburb: suburb}) && _.isMatch(results.data[i], {landsize: landsize}) ) {
+        if (  _.isMatch(results.data[i], {landsize: landsize}) ) {
           console.log(`interation = ${results.data[i]}`);
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
@@ -135,11 +135,11 @@ class PropertySearch extends Component {
           <option value="Sydney">Sydney</option>
         </select>
 
-        <input type="text" placeholder="landsize" onChange={ this._handleChangeLandsize } />
+        <input type="number" placeholder="landsize" onChange={ this._handleChangeLandsize } />
 
-        <input type="text" placeholder="bedrooms" onChange={ this._handleChangeBedrooms }  />
+        <input type="number" placeholder="bedrooms" onChange={ this._handleChangeBedrooms }  />
 
-        <input type="text" placeholder="bathrooms" onChange={ this._handleChangeBathrooms }  />
+        <input type="number" placeholder="bathrooms" onChange={ this._handleChangeBathrooms }  />
 
         <input type="text" placeholder="private parking" onChange={ this._handleChangePrivateParking }  />
 
