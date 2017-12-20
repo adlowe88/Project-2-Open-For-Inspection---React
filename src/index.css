@@ -30,13 +30,12 @@ label {
   flex-grow: 1; /* this is the important bit */
 }
 
-/*//////////////////////////////////Home Page/////////////////////////////////*/
+/*//////////////////////////////////Home Page/////////////////////////////////*//
 
 .search-div {
   border: 2px solid black;
   width: 33%;
 }
-
 
 .predict-form {
   padding: 20px;
