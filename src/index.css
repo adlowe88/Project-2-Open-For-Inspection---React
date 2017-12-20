@@ -43,3 +43,15 @@ input {
 -moz-border-radius: 5px;
 border-radius: 5px;
 }
+
+
+.map {
+  height: 300px;
+}
+
+@media screen and (min-width: 1024px){
+    .map {
+        height: 500px;
+    }
+}
+/* These (map and @media) are from a different tutorial. might not be needed??? */
