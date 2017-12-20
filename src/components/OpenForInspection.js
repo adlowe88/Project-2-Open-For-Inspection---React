@@ -7,6 +7,16 @@ class OpenForInspection extends Component {
   render() {
     return (
       <div className = "homepage">
+        <nav className="fixednav">
+          <div className="leftnav">logo</div>
+
+          <div className="rightnav">home</div>
+
+          <div className="rightnav">profile</div>
+
+          <div className="rightnav">contact</div>
+
+        </nav>
         <div className = "search-div">
           <PredictPrice/>
           <h3><Link to="/property">Property</Link></h3>
