@@ -1,6 +1,7 @@
 import React, { PureComponent as Component } from 'react';
 import { Link } from 'react-router-dom';
 import PredictPrice from './PredictPrice';
+import image from './image.png';
 
 
 class OpenForInspection extends Component {
@@ -9,7 +10,7 @@ class OpenForInspection extends Component {
       <div className = "homepage">
         <nav className="fixednav">
           <div className="leftnav">
-          logo
+          <Link to="/"><img src={image} alt="logo" /></Link>
           </div>
 
           <div className="rightnav">home</div>
