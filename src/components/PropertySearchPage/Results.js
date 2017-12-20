@@ -1,7 +1,7 @@
 import React, {PureComponent as Component} from 'react';
 import { Link } from 'react-router-dom';
-import Property from './Property';
-import PropertySearch from './PropertySearch';
+import Property from '../PropertyCreatePage/Property';
+import PropertySearcher from './PropertySearcher';
 
 class ResultsSearch extends Component {
   render() {

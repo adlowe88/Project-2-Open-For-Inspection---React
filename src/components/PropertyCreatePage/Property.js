@@ -1,6 +1,6 @@
 import React, { PureComponent as Component } from 'react';
 import { Link } from 'react-router-dom';
-import Results from './Results';
+import Results from '../PropertySearchPage/Results';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 import axios from 'axios';
@@ -67,19 +67,19 @@ class PropertiesForm extends Component {
     return (
       <form onSubmit={this._handleSubmit}>
 
-        <input type="text" value={this.state.address} onChange={this._handleChangeAddress} placeholder="address" required />
+        <input type="text" value={this.state.address} onChange={this._handleChangeAddress} placeholder="address"  />
 
-        <input type="text" value={this.state.suburb} onChange={this._handleChangeSuburb} placeholder="suburb" required />
+        <input type="text" value={this.state.suburb} onChange={this._handleChangeSuburb} placeholder="suburb"  />
 
-        <input type="number" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="landsize" required />
+        <input type="text" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="landsize"  />
 
-        <input type="number" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="bedrooms" required />
+        <input type="number" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="bedrooms"  />
 
-        <input type="number" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms" required />
+        <input type="number" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms"  />
 
-        <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="private parking" required />
+        <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="private parking"  />
 
-        <input type="number" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected price" required />
+        <input type="text" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected price"  />
 
         <input type="submit" value="create property"/>
 

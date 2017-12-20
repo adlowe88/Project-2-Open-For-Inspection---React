@@ -1,22 +1,17 @@
 import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
-import OpenForInspection from './components/OpenForInspection';
-import Property from './components/Property';
-import Search from './components/Search';
-import Results from './components/Results';
-import PredictPrice from './components/PredictPrice';
-
-import PropertySearch from '/components/PropertySearch';
-import PropertyCreate from '/components/PropertyCreate';
+import PropertySearcher from './components/PropertySearchPage/PropertySearcher';
+import Property from './components/PropertyCreatePage/Property';
+import HomePage from './components/Homepage/HomePage';
 
 
 const Routes = (
   <Router>
     <div>
-      <Route exact path="/" component={ OpenForInspection }/>
-      <Route exact path="/property" component={ PropertyCreate }/>
-      <Route exact path="/search" component={ PropertySearch }/>
+      <Route exact path="/" component={ HomePage }/>
+      <Route exact path="/property" component={ Property }/>
+      <Route exact path="/search" component={ PropertySearcher }/>
     </div>
   </Router>
 )

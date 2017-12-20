@@ -8,9 +8,9 @@ import GoogleAPI from './GoogleAPI';
 import GoogleApiComponent from './GoogleApiComponent';
 
 
-class PropertySearch extends Component {
+class PropertySearcher extends Component {
   render() {
-    return {
+    return (
       <div className="property-search-page">
         <Search />
         <Results />
@@ -18,9 +18,9 @@ class PropertySearch extends Component {
         <Container />
         <GoogleAPI />
         <GoogleApiComponent />
-      <div>
-    }
+      </div>
+    )
   }
 }
 
-export default PropertySearch;
+export default PropertySearcher;
