@@ -6,6 +6,7 @@ import _ from 'underscore';
 
 import Results from './Results';
 import MapResults from './MapResults';
+import PropertySearch from './PropertySearch';
 
 const SERVER_URL = 'http://localhost:5000/properties.json'
 
@@ -56,7 +57,7 @@ class Search extends Component {
         if ( _.isMatch(results.data[i], {suburb: suburb}) && _.isMatch(results.data[i], {landsize: parseInt(landsize)})
         && _.isMatch(results.data[i], {bedrooms: parseInt(bedrooms)})
         && _.isMatch(results.data[i], {bathrooms: parseInt(bathrooms)})
-        && _.isMatch(results.data[i], {parking: parking}) 
+        && _.isMatch(results.data[i], {parking: parking})
             ) {
           console.log(`interation = ${results.data[i]}`);
           arrayProperties.push(results.data[i]);
