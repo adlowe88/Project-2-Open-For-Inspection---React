@@ -53,7 +53,7 @@ class Search extends Component {
     axios.get(SERVER_URL).then(function (results) {
       let arrayProperties = [];
       for (let i = 0; i < results.data.length; i++) {
-        if (_.isMatch(results.data[i], {suburb: suburb, landsize: landsize})) {
+        if ( _.isMatch(results.data[i], {landsize: suburb}) ) {
           console.log(`interation = ${results.data[i]}`);
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
