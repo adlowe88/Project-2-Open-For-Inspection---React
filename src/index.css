@@ -43,6 +43,7 @@ label {
 
 /*//////////////////////////////////Home Page/////////////////////////////////*//
 
+
 .search-div {
   border: 2px solid black;
   width: 33%;
@@ -92,3 +93,5 @@ border-radius: 5px;
     }
 }
 /* These (map and @media) are from a different tutorial. might not be needed??? */
+
+/*///////////////////////////////Property Page////////////////////////////////*/
