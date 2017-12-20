@@ -7,7 +7,8 @@ import image from './image.png';
 class OpenForInspection extends Component {
   render() {
     return (
-      <div className = "homepage">
+      <div>
+
         <nav className="fixednav">
           <div className="leftnav">
           <Link to="/"><img src={image} alt="logo" /></Link>
@@ -18,11 +19,13 @@ class OpenForInspection extends Component {
           <div className="rightnav">sign up</div>
 
         </nav>
+
         <div className = "search-div">
           <PredictPrice/>
           <h3><Link to="/property">Property</Link></h3>
           <h3><Link to="/search">Search</Link></h3>
         </div>
+        
       </div>
     );
   }
