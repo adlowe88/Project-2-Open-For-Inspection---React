@@ -13,10 +13,15 @@ const SERVER_URL = 'http://localhost:5000/properties.json'
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { properties: [] };
+    this.state = {
+      properties: [],
+      suburb: "north sydney"
+     };
 
     this.fetchProperties = this.fetchProperties.bind(this);
   }
+
+
 
   // fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
   //
@@ -74,7 +79,7 @@ class Search extends Component {
         <h2>Search for a property</h2>
         <PropertySearch onSubmit={ this.fetchProperties }/>
         <Results properties={ this.state.properties }/>
-        <MapResults />
+        <MapResults suburb={ this.state.suburb }/>
       </React.Fragment>
     );
   }
@@ -101,6 +106,8 @@ class PropertySearch extends Component {
   _handleChangeSuburb(e) {
     this.setState( { suburb: e.target.value
     } );
+    console.log("the value just selected", e.target.value);
+    console.log("this.state - one behind", this.state.suburb);
   }
 
   _handleChangeLandsize(e) {

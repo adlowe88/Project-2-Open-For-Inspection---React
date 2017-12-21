@@ -23,7 +23,6 @@ class MapResults extends Component {
   constructor() {
     super()
     this.state = {
-      suburb: "bondi",
       gMapKey: "AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA"
     }
   }
@@ -48,7 +47,7 @@ class MapResults extends Component {
       <iframe
         width="500"
         height="300"
-        src={`https://www.google.com/maps/embed/v1/place?q=${this.state.suburb}&key=${this.state.gMapKey}`}>
+        src={`https://www.google.com/maps/embed/v1/place?q=${this.props.suburb}&key=${this.state.gMapKey}`}>
        </iframe>
        <div>
          put some suburb info here, move div to right.
