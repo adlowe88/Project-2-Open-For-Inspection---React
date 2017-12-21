@@ -19,9 +19,12 @@ class HomePage extends Component {
         <OpenForInspection />
         <About />
         <Footer />
+
       </div>
     );
   }
 }
 
 export default HomePage;
+
+// <iframe allowvr src="http://localhost:8081/vr/" width="600" height="400" />
