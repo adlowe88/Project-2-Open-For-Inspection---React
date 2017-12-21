@@ -50,7 +50,7 @@ class Search extends Component {
   //   }.bind(this));
   // }
 
-  fetchProperties( suburb, landsize, bedrooms, bathrooms, parking ) {
+  fetchProperties( suburb, landsize, bedrooms, bathrooms ) {
     axios.get(SERVER_URL).then(function (results) {
       let arrayProperties = [];
       for (let i = 0; i < results.data.length; i++) {
@@ -144,8 +144,6 @@ class PropertySearch extends Component {
         <input type="tect" placeholder="bedrooms" onChange={ this._handleChangeBedrooms }  />
 
         <input type="text" placeholder="bathrooms" onChange={ this._handleChangeBathrooms } />
-
-        <input type="text" placeholder="private parking" onChange={ this._handleChangePrivateParking } />
 
         <input type="submit" value="Search Properties" />
       </form>
