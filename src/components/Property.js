@@ -104,8 +104,8 @@ class Property extends Component {
     fetchProperties();
   }
 
-  createProperty(address, suburb, landsize, bedrooms, bathrooms, private_parking, expected_price) {
-    axios.post(SERVER_URL, { address: address, suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price }).then(results =>
+  createProperty(address, suburb, landsize, bedrooms, bathrooms, parking, price) {
+    axios.post(SERVER_URL, { address: address, suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: parking, expected_price: price }).then(results =>
       {
       this.setState({ properties: [results.data, ...this.state.properties] })
     });

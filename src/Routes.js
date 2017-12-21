@@ -6,7 +6,7 @@ import Property from './components/Property';
 import Search from './components/Search';
 import Results from './components/Results';
 import ProdictPrice from './components/PredictPrice';
-import Login from './components/Login';
+import Auction from './components/Auction';
 
 
 const Routes = (
@@ -16,7 +16,7 @@ const Routes = (
       <Route exact path="/property" component={ Property }/>
       <Route exact path="/search" component={ Search }/>
       <Route exact path="/predict" component={ ProdictPrice }/>
-      <Route exact path="/login" component={ Login }/>
+      <Route exact path="/auction" component={ Auction }/>
     </div>
   </Router>
 )

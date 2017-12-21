@@ -17,11 +17,11 @@ class Search extends Component {
     this.fetchProperties = this.fetchProperties.bind(this);
   }
 
-  fetchProperties( suburb, landsize, bedrooms, bathrooms, private_parking, expected_price ) {
+  fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
     axios.get(SERVER_URL).then( results => {
       const allProperties = results.data;
       console.log( allProperties );
-      let queriedProperties = allProperties.filter( property => _( property ).isMatch( { suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: private_parking, expected_price: expected_price } )
+      let queriedProperties = allProperties.filter( property => _( property ).isMatch( { suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: parking, expected_price: price } )
     );
     if ( _( queriedProperties ).isEmpty() ) {
       queriedProperties = allProperties;
@@ -36,7 +36,7 @@ class Search extends Component {
     return (
       <React.Fragment>
         <h2>Search for a property</h2>
-        <PropertySearch onSubmit={  this.fetchProperties }/>
+        <PropertySearch onSubmit={ this.fetchProperties }/>
         <Results properties={ this.state.properties }/>
         <MapResults />
       </React.Fragment>
@@ -47,7 +47,7 @@ class Search extends Component {
 class PropertySearch extends Component {
   constructor( props ) {
     super( props );
-    this.state = { suburb: '', landsize: '', bedrooms: '', bathroom: '', private_parking: '', expected_price: '' };
+    this.state = { suburb: '', landsize: '', bedrooms: '', bathrooms: '', private_parking: '', expected_price: '' };
 
     this._handleChangeSuburb = this._handleChangeSuburb.bind(this);
 
@@ -70,23 +70,23 @@ class PropertySearch extends Component {
   }
 
   _handleChangeLandsize(e) {
-    this.setState( { landsize: e.target.value.toUpperCase() } );
+    this.setState( { landsize: e.target.value } );
   }
 
   _handleChangeBedrooms(e) {
-    this.setState( { bedrooms: e.target.value.toUpperCase() } );
+    this.setState( { bedrooms: e.target.value } );
   }
 
   _handleChangeBathrooms(e) {
-    this.setState( { bathrooms: e.target.value.toUpperCase() } );
+    this.setState( { bathrooms: e.target.value } );
   }
 
   _handleChangePrivateParking(e) {
-    this.setState( { private_parking: e.target.value.toUpperCase() } );
+    this.setState( { private_parking: e.target.value } );
   }
 
   _handleChangeExpectedPrice(e) {
-    this.setState( { expected_price: e.target.value.toUpperCase() } );
+    this.setState( { expected_price: e.target.value } );
   }
 
   _handleSubmit(e) {
