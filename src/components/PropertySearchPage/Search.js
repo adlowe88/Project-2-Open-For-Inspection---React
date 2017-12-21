@@ -22,25 +22,6 @@ class Search extends Component {
   }
 
 
-
-  // fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
-  //
-  //   console.log('searching for property from suburb of', suburb, 'with landsize of', landsize);
-  //   console.log(this.state);
-  //
-  //   axios.get(SERVER_URL).then( results => {
-  //     const allProperties = results.data;
-  //     console.log( allProperties );
-  //     let queriedProperties = allProperties.filter( property => _( allProperties ).isMatch( { suburb: suburb, landsize: landsize, bedrooms: bedrooms, bathrooms: bathrooms, private_parking: parking, expected_price: price } )
-  //   );
-  //   if ( _( queriedProperties ).isEmpty() ) {
-  //     queriedProperties = allProperties;
-  //   }
-  //   console.log( queriedProperties );
-  //   this.setState( { properties: queriedProperties } );
-  // });
-  // }
-
   // fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
   //   axios.get(SERVER_URL).then(function (results){
   //     let array_properties = [];
@@ -60,10 +41,34 @@ class Search extends Component {
       let arrayProperties = [];
       for (let i = 0; i < results.data.length; i++) {
         if ( _.isMatch(results.data[i], {suburb: suburb})
+        && ( _.isMatch(results.data[i], {landsize: landsize}))
+        && ( _.isMatch(results.data[i], {bedrooms: bedrooms}))
+        && ( _.isMatch(results.data[i], {bathrooms: bathrooms}))) {
+          arrayProperties.push(results.data[i]);
+          console.log(arrayProperties);
+          console.log(this.state);
+        } else if ( _.isMatch(results.data[i], {suburb: suburb})
         && (_.isMatch(results.data[i], {landsize: landsize}))
-        && (_.isMatch(results.data[i], {bedrooms: bedrooms}))
-        && (_.isMatch(results.data[i], {bathrooms: bathrooms}))
-       ) {
+        && (_.isMatch(results.data[i], {bedrooms: bedrooms}))) {
+          arrayProperties.push(results.data[i]);
+          console.log(arrayProperties);
+          console.log(this.state);
+        } else if ( _.isMatch(results.data[i], {suburb: suburb})
+        && (_.isMatch(results.data[i], {landsize: landsize}))) {
+          arrayProperties.push(results.data[i]);
+          console.log(arrayProperties);
+          console.log(this.state);
+        } else if ( _.isMatch(results.data[i], {suburb: suburb})
+        && (_.isMatch(results.data[i], {bedrooms: bedrooms}))) {
+          arrayProperties.push(results.data[i]);
+          console.log(arrayProperties);
+          console.log(this.state);
+        } else if ( _.isMatch(results.data[i], {suburb: suburb})
+        && (_.isMatch(results.data[i], {bathrooms: bathrooms}))) {
+          arrayProperties.push(results.data[i]);
+          console.log(arrayProperties);
+          console.log(this.state);
+        } else if ( _.isMatch(results.data[i], {suburb: suburb})) {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
           console.log(this.state);
