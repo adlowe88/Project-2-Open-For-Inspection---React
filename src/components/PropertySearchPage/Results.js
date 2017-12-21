@@ -31,16 +31,16 @@ function Results(props) {
   //   console.log(props.properties);
   // }
   return (
-    <div>
+    <div className = "property-results">
       <h1>Properties</h1>
       <div className="results-grid headings">
-        <span className="results-address"><strong>Address</strong></span>
-        <span className="results-suburb"><strong>Suburb</strong></span>
-        <span className="results-landsize"><strong>Landsize</strong></span>
-        <span className="results-bedroom"><strong>Bedrooms</strong></span>
-        <span className="results-bathroom"><strong>Bathrooms</strong></span>
-        <span className="results-privateparking"><strong>Private parking</strong></span>
-        <span className="results-expectedprice"><strong>Expected price</strong></span>
+        <h3 className="results-address"><strong>Address</strong></h3>
+        <h3 className="results-suburb"><strong>Suburb</strong></h3>
+        <h3 className="results-landsize"><strong>Landsize</strong></h3>
+        <h3 className="results-bedroom"><strong>Bedrooms</strong></h3>
+        <h3 className="results-bathroom"><strong>Bathrooms</strong></h3>
+        <h3 className="results-privateparking"><strong>Private parking</strong></h3>
+        <h3 className="results-expectedprice"><strong>Expected price</strong></h3>
       </div>
 
 
@@ -49,12 +49,12 @@ function Results(props) {
       { props.properties.map( f =>
         <div className="results-grid" key={ f.id }>
           <span className="results-address">{ f.address }</span>
-          <span className="results-address">{ f.suburb }</span>
+          <span className="results-suburb">{ f.suburb }</span>
           <span className="results-landsize">{ f.landsize }</span>
           <span className="results-bedroom">{ f.bedrooms }</span>
           <span className="results-bathroom">{ f.bathrooms }</span>
           <span className="results-privateparking">{ f.private_parking + '' }</span>
-          <span className="results-expectedprice">{ f.expected_price }</span>
+          <span className="results-expectedprice">${ f.expected_price }</span>
           <span><Link to={{pathname: '/auction/' + f.id}}>Auction</Link></span>
         </div>
       )

@@ -40,28 +40,28 @@ class MapResults extends Component {
   // SIMPLE VERSION
   render(){
     return (
-    <div>
+    <div class = "map-results-div">
       <div>
-        put some suburb info here, move div to left.
+
       </div>
       <iframe
-        width="500"
-        height="300"
+        width="700"
+        height="350"
         src={`https://www.google.com/maps/embed/v1/place?q=${this.props.suburb}&key=${this.state.gMapKey}`}>
        </iframe>
        <div>
-         put some suburb info here, move div to right.
+
        </div>
     </div>
     )
   }
 
-/////
+/////put some suburb info here, move div to left.
 
 
 
 
-//////
+////// put some suburb info here, move div to right.
 
 
 

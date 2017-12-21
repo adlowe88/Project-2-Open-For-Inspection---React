@@ -6,29 +6,50 @@ import image from './image.png';
 
 class OpenForInspection extends Component {
   render() {
+
+    const style = {
+      border: '0.5px solid black',
+      width: '33%',
+      display: 'inline-flex',
+      position: 'absolute',
+      top: '29.3%',
+      left: '20%',
+      height: '50%',
+      backgroundColor: 'white',
+      opacity: '0.8',
+      borderRadius: '8px',
+      color: 'black',
+    }
+
+    const style2 = {
+      textAlign: 'center',
+      margin: '8% auto',
+    }
+
     return (
       <div>
-
         <nav className="fixednav">
           <div className="leftnav">
-          <Link to="/"><img src={image} alt="logo" /></Link>
+          <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png" alt="logo" className = "logo" /></Link>
           </div>
-
-          <div className="rightnav">login</div>
-
-          <div className="rightnav">sign up</div>
-
         </nav>
 
-        <div className = "search-div">
-          <PredictPrice/>
-          <h3><Link to="/property">Property</Link></h3>
-          <h3><Link to="/search">Search</Link></h3>
+        <div style = { style } className = "search-div" >
+          <div style = { style2 } className = "inner-div">
+            <button className = "add-button"><Link to="/property">Add Property</Link></button>
+            <button className = "search-button"><Link to="/search">Search</Link></button>
+            <PredictPrice/>
+          </div>
         </div>
-        
+
       </div>
     );
   }
 }
 
 export default OpenForInspection;
+
+
+// <div className="rightnav">login</div>
+//
+// <div className="rightnav">sign up</div>

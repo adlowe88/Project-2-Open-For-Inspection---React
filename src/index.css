@@ -1,4 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Noticia+Text');
+@import url('https://fonts.googleapis.com/css?family=Lora|Noticia+Text|Open+Sans+Condensed:700');
+@import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Advent+Pro');
+
+/*font-family: 'Noticia Text', serif;*/
+/*font-family: 'Advent Pro', sans-serif;*/
+/*font-family: 'Abril Fatface', cursive;*/
 
 .menu-enter {
   max-height: 0px;
@@ -26,16 +33,36 @@ ul {
 body {
   margin: 50px;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lora', serif;
   /* background: url('https://i.imgur.com/2nLpELR.jpg');
   background-size: cover; */
   background-color: rgba(0, 0, 0, 0.2);
+  height: 100%;
+  letter-spacing: 1px;
+  font-family: 'Advent Pro', sans-serif;
 }
 
-label {
-
-  font-size: 13px;
+/*////////////////////////////     Footer    /////////////////////////////////*/
+footer {
+  background-color: black;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 11.9%;
+  opacity: 0.8;
+  text-align: center;
+  color: #f0750f;
 }
+
+footer h3 {
+  display: inline-block;
+  padding: 1.3% 3.3%;
+  letter-spacing: 2px;
+  font-size: 23px;
+}
+
+/*///////////////////////////    Home Page    ///////////////////////////////*/
 
 .t2 {
     /*height: inherit;*/
@@ -46,8 +73,8 @@ label {
     height: 100%;
     width: 100%;
 
-    margin-top: -4%;
-    margin-left: -4%;
+    /*margin-top: -4%;*/
+    /*margin-left: -4%;*/
 
     /* Set the height to match that of the viewport. */
     height: 100vh;
@@ -56,27 +83,49 @@ label {
     width: 100vw;
 
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
 }
 
-
-
-.fixednav {
-  display: flex;
-  flex-direction: row;
-  align-items: center; /* aligns links vertically */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 9999;
-  width: 100%;
-  height: 60px;
-  background-color: rgba(0, 0, 0, 0.2);
+.search-button {
+  font-family: 'Advent Pro', sans-serif;
+  font-weight: 800;
+  display: inline-block;
+  font-size: 38px;
+  padding: 15px;
+  margin-bottom: 10%;
+  margin-left: 33px;
+  background-color: #f0750f;
+  width: 34%;
+  border-radius: 8px;
+  overflow-x: none;
 }
 
-.leftnav {
-  flex-grow: 1; /* this is the important bit */
-  padding-top: 0.2em;
+.search-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.add-button {
+  font-family: 'Advent Pro', sans-serif;
+  font-weight: 800;
+  display: inline-block;
+  font-size: 38px;
+  padding: 15px;
+  margin-bottom: 10%;
+  margin-left: -5px;
+  background-color: #f0750f;
+  border-radius: 8px;
+}
+
+.add-button a {
+  text-decoration: none;
+  color: white;
+}
+
+.logo {
+  width: 33%;
+  margin-top: -3%;
+  margin-left: 16%;
 }
 
 .rightnav {
@@ -84,43 +133,31 @@ label {
 }
 
 .home-page {
-  background: url('https://i.imgur.com/2nLpELR.jpg');
+  background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ),
+    url('https://i.imgur.com/2nLpELR.jpg');
   background-size: cover;
+  overflow-x: hidden;
+  background-position: center;
+  transform: scale(0.8);
+  padding: 0 13.3%;
+  padding-bottom: 10%;
+  margin-left: -16.5%;
+  margin-top: -10.1%;
+  opacity: 0.8;
 }
 
-/*//////////////////////////////////Home Page/////////////////////////////////*//
-
-
-div.search-div {
-  border: 2px solid black;
-  width: 33%;
+.inner-div {
+  margin: 0 auto;
 }
 
-.predict-form {
-  padding: 20px;
-  background-color: #d0a774;
+.search-div {
+  position: absolute;
 }
 
-.predict-label{
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-}
-.predict-button {
-  margin: 15px 0 0 0;
-  padding: 15px;
-  font-family: 'Open Sans', sans-serif;
-  text-transform: uppercase;
-}
 
-.predict-select{
-  width: 100px;
-}
-.predict-input{
-  width: 100px;
-}
 
 .results-grid span {
-  background-color: rgba(0, 0, 0, 0.2);
+  /*background-color: rgba(0, 0, 0, 0.2);*/
 }
 
 input {
@@ -141,4 +178,157 @@ border-radius: 5px;
 }
 /* These (map and @media) are from a different tutorial. might not be needed??? */
 
-/*///////////////////////////////Property Page////////////////////////////////*/
+
+/*///////////////////////////    Predict Form    ///////////////////////////////*/
+
+.predict-form {
+  position: relative;
+  top: 18%;
+  left: 0;
+  padding-top: 20px;
+}
+
+.predict-label{
+  font-family: 'Advent Pro', sans-serif;
+  text-transform: uppercase;
+  margin: 8px 0;
+  font-size: 28px;
+}
+.predict-button {
+  font-family: 'Abril Fatface', cursive;
+  font-style: italic;
+  font-weight: 800;
+  margin: 13% 0 0 0;
+  padding: 15px;
+  width: 43%;
+  text-transform: uppercase;
+  font-size: 23px;
+  letter-spacing: 5px;
+  background-color: #f0750f;
+  color: white;
+}
+
+.predict-select{
+  width: 50%;
+  font-size: 23px;
+  margin: 6px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.predict-input{
+  width: 48%;
+  font-size: 23px;
+  padding-left: 8.3px;
+}
+
+.predict-search {
+  margin-bottom: 5px;
+}
+
+
+/*////////////////////////       Property Page      //////////////////////////*/
+.property-page h1 {
+  font-family: 'Abril Fatface', cursive;
+  text-align: center;
+  font-size: 43px;
+}
+
+.fake-nav {
+  text-align: center;
+  margin-top: -2.3%;
+}
+
+.fake-nav h2 {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 23px;
+  font-size: 28px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.fake-nav h2 a {
+  font-family: 'Open Sans', sans-serif;
+  text-decoration: none;
+  color: #f0750f;
+}
+
+.prop-form {
+  text-align: center;
+  height: 5%;
+  padding: 10px;
+}
+
+.prop-form input {
+  padding: 3px;
+  margin-left: 23px;
+  text-align: center;
+  font-size: 13px;
+}
+
+input.prop-form-submit {
+  font-size: 15px;
+  padding: 3.3px 12px;
+  background-color: #f0750f;
+  color: white;
+}
+
+/*////////////////////////       Auction Page      //////////////////////////*/
+
+
+iframe {
+  margin-top: 2%;
+  margin-left: 28%;
+}
+
+
+.auction-form {
+  text-align: center;
+}
+
+.live-auction {
+  text-align: center;
+}
+
+/*////////////////////////       Search Page      //////////////////////////*/
+
+.search-page-div h1 {
+  text-align: center;
+  font-size: 43px;
+  font-family: 'Abril Fatface', cursive;
+}
+
+.search-form {
+  text-align: center;
+  height: 5%;
+  padding: 10px;
+}
+
+.search-form select {
+  padding: 8px;
+  margin-left: 23px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.search-form select option  {
+  padding: 2px;
+}
+
+.search-form input {
+  padding: 3px;
+  margin-left: 23px;g
+  text-align: center;
+  font-size: 13px;
+}
+
+input.search-form-submit {
+  font-size: 15px;
+  padding: 3.3px 12px;
+  background-color: #f0750f;
+  color: white;
+}
+
+.map-results-div iframe {
+  margin-left: 28%;
+}

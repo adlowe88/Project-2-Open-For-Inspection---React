@@ -85,7 +85,7 @@ class PredicForm extends Component {
         <input className = "predict-input" type="text" placeholder="m^2"value = {this.state.land_area} onChange={this._handleChange_land_area} />
         </label><br />
 
-        <input type="submit" value="Submit" className="predict-button" />
+        <input type="submit" value="???" className="predict-button" />
       </form>
 
     )

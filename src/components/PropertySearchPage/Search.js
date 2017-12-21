@@ -82,12 +82,22 @@ class Search extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h2>Search for a property</h2>
-        <PropertySearch onSubmit={ this.fetchProperties } menuChange={ this.menuChange }/>
-        <Results properties={ this.state.properties }/>
-        <MapResults suburb={ this.state.suburb }/>
-      </React.Fragment>
+      <div class="search-page-div">
+        <React.Fragment>
+          <h1>Search for a property</h1>
+          <div className = "fake-nav">
+            <h2><Link to="/">Home</Link></h2>
+            <h2><Link to="/property">Add Property</Link></h2>
+          </div>
+          <PropertySearch onSubmit={ this.fetchProperties } menuChange={ this.menuChange }/>
+          <Results properties={ this.state.properties }/>
+
+          <div>
+            <MapResults suburb={ this.state.suburb }/>
+          </div>
+
+        </React.Fragment>
+      </div>
     );
   }
 }
@@ -142,7 +152,7 @@ class PropertySearch extends Component {
 
   render() {
     return (
-      <form onSubmit={ this._handleSubmit }>
+      <form onSubmit={ this._handleSubmit } className = "search-form">
 
         <select value={this.state.selectValue} onChange={ this._handleChangeSuburb } required >
           <option value="">Select Suburb</option>
@@ -160,7 +170,7 @@ class PropertySearch extends Component {
 
         <input type="text" placeholder="bathrooms" onChange={ this._handleChangeBathrooms } />
 
-        <input type="submit" value="Search Properties" />
+        <input type="submit" value="Search Properties" class = "search-form-submit" />
       </form>
     );
   }
