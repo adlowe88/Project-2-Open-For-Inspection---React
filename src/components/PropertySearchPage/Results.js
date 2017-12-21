@@ -1,6 +1,7 @@
 import React, {PureComponent as Component} from 'react';
 import { Link } from 'react-router-dom';
-import Property from './Property';
+import Property from '../PropertyCreatePage/Property';
+import Search from './Search';
 
 class ResultsSearch extends Component {
   render() {
@@ -48,6 +49,7 @@ function Results(props) {
       { props.properties.map( f =>
         <div className="results-grid" key={ f.id }>
           <span className="results-address">{ f.address }</span>
+          <span className="results-address">{ f.suburb }</span>
           <span className="results-landsize">{ f.landsize }</span>
           <span className="results-bedroom">{ f.bedrooms }</span>
           <span className="results-bathroom">{ f.bathrooms }</span>
