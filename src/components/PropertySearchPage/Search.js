@@ -50,26 +50,23 @@ class Search extends Component {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
           console.log(this.state);
-        } else if ( _.isMatch(results.data[i], {suburb: suburb})
-        && (_.isMatch(results.data[i], {landsize: landsize}))) {
-          arrayProperties.push(results.data[i]);
-          console.log(arrayProperties);
-          console.log(this.state);
-        } else if ( _.isMatch(results.data[i], {suburb: suburb})
-        && (_.isMatch(results.data[i], {bedrooms: bedrooms}))) {
-          arrayProperties.push(results.data[i]);
-          console.log(arrayProperties);
-          console.log(this.state);
-        } else if ( _.isMatch(results.data[i], {suburb: suburb})
+        } else if (_.isMatch(results.data[i], {suburb: suburb})
+        && (_.isMatch(results.data[i], {landsize: landsize}))
         && (_.isMatch(results.data[i], {bathrooms: bathrooms}))) {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
           console.log(this.state);
-        } else if ( _.isMatch(results.data[i], {suburb: suburb})) {
+        } else if (_.isMatch(results.data[i], {suburb: suburb})
+        && (_.isMatch(results.data[i], {bedrooms: bedrooms}) || _.isMatch(results.data[i], {bathrooms: bathrooms}))) {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
           console.log(this.state);
-        }
+        } else if (_.isMatch(results.data[i], {suburb: suburb})
+        && (_.isMatch(results.data[i], {landsize: landsize}))) {
+          arrayProperties.push(results.data[i]);
+          console.log(arrayProperties);
+          console.log(this.state);
+        } 
       }
       this.setState({properties : arrayProperties})
     }.bind(this));
