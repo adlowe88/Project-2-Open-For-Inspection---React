@@ -19,6 +19,7 @@ class HomePage extends Component {
         <OpenForInspection />
         <About />
         <Footer />
+        <iframe allowvr src="https://adlowe88.github.io/Nora-VR/Nora-VR/vr/" width="600" height="400" />
 
       </div>
     );
@@ -27,4 +28,4 @@ class HomePage extends Component {
 
 export default HomePage;
 
-// <iframe allowvr src="http://localhost:8081/vr/" width="600" height="400" />
+<iframe allowvr src="https://adlowe88.github.io/Nora-VR/Nora-VR/vr/" width="600" height="400" />
