@@ -50,15 +50,15 @@ class Search extends Component {
   //   }.bind(this));
   // }
 
-  fetchProperties( suburb, landsize, bedrooms, bathrooms, parking ) {
+  fetchProperties( suburb, landsize, bedrooms, bathrooms ) {
     axios.get(SERVER_URL).then(function (results) {
       let arrayProperties = [];
       for (let i = 0; i < results.data.length; i++) {
-        if ( _.isMatch(results.data[i], {suburb: suburb}) && _.isMatch(results.data[i], {landsize: parseInt(landsize)})
-        && _.isMatch(results.data[i], {bedrooms: parseInt(bedrooms)})
-        && _.isMatch(results.data[i], {bathrooms: parseInt(bathrooms)})
-        && _.isMatch(results.data[i], {parking: parking})
-            ) {
+        if ( _.isMatch(results.data[i], {suburb: suburb})
+        && (_.isMatch(results.data[i], {landsize: landsize}))
+        && (_.isMatch(results.data[i], {bedrooms: bedrooms}))
+        && (_.isMatch(results.data[i], {bathrooms: bathrooms}))
+       ) {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
           console.log(this.state);
@@ -129,7 +129,7 @@ class PropertySearch extends Component {
     return (
       <form onSubmit={ this._handleSubmit }>
 
-        <select value={this.state.selectValue} onChange={ this._handleChangeSuburb }>
+        <select value={this.state.selectValue} onChange={ this._handleChangeSuburb } required >
           <option value="">Select Suburb</option>
           <option value="Asquith">Asquith</option>
           <option value="Bondi">Bondi</option>
@@ -139,13 +139,11 @@ class PropertySearch extends Component {
           <option value="Sydney">Sydney</option>
         </select>
 
-        <input type="number" placeholder="landsize" onChange={ this._handleChangeLandsize } />
+        <input type="text" placeholder="landsize" onChange={ this._handleChangeLandsize } />
 
-        <input type="number" placeholder="bedrooms" onChange={ this._handleChangeBedrooms }  />
+        <input type="tect" placeholder="bedrooms" onChange={ this._handleChangeBedrooms }  />
 
-        <input type="number" placeholder="bathrooms" onChange={ this._handleChangeBathrooms }  />
-
-        <input type="text" placeholder="private parking" onChange={ this._handleChangePrivateParking }  />
+        <input type="text" placeholder="bathrooms" onChange={ this._handleChangeBathrooms } />
 
         <input type="submit" value="Search Properties" />
       </form>
