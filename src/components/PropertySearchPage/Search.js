@@ -19,8 +19,13 @@ class Search extends Component {
      };
 
     this.fetchProperties = this.fetchProperties.bind(this);
+    this.menuChange = this.menuChange.bind(this);
   }
 
+  menuChange (menuValue) {
+    console.log(menuValue);
+    this.setState( { suburb: menuValue })
+  }
 
   // fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
   //   axios.get(SERVER_URL).then(function (results){
@@ -82,7 +87,7 @@ class Search extends Component {
     return (
       <React.Fragment>
         <h2>Search for a property</h2>
-        <PropertySearch onSubmit={ this.fetchProperties }/>
+        <PropertySearch onSubmit={ this.fetchProperties } menuChange={ this.menuChange }/>
         <Results properties={ this.state.properties }/>
         <MapResults suburb={ this.state.suburb }/>
       </React.Fragment>
@@ -111,8 +116,9 @@ class PropertySearch extends Component {
   _handleChangeSuburb(e) {
     this.setState( { suburb: e.target.value
     } );
-    console.log("the value just selected", e.target.value);
-    console.log("this.state - one behind", this.state.suburb);
+    // console.log("the value just selected", e.target.value);
+    // console.log("this.state - one behind", this.state.suburb);
+    this.props.menuChange(e.target.value)
   }
 
   _handleChangeLandsize(e) {
