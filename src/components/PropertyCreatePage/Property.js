@@ -73,9 +73,9 @@ class PropertiesForm extends Component {
 
         <input type="text" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="landsize"  />
 
-        <input type="number" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="bedrooms"  />
+        <input type="text" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="bedrooms"  />
 
-        <input type="number" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms"  />
+        <input type="text" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms"  />
 
         <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="private parking"  />
 

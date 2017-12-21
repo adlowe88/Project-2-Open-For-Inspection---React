@@ -57,7 +57,7 @@ class Search extends Component {
             ) {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
-          // console.log(this.state);
+          console.log(this.state);
         }
       }
       this.setState({properties : arrayProperties})
