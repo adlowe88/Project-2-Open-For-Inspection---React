@@ -55,6 +55,7 @@ function Results(props) {
           <span className="results-bathroom">{ f.bathrooms }</span>
           <span className="results-privateparking">{ f.private_parking + '' }</span>
           <span className="results-expectedprice">{ f.expected_price }</span>
+          <span><Link to={{pathname: '/auction/' + f.id}}>Auction</Link></span>
         </div>
       )
      }

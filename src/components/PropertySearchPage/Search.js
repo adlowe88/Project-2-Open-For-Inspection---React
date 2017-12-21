@@ -13,11 +13,19 @@ const SERVER_URL = 'http://localhost:5000/properties.json'
 class Search extends Component {
   constructor(props) {
     super(props);
-    this.state = { properties: [] };
+    this.state = {
+      properties: [],
+      suburb: "north sydney"
+     };
 
     this.fetchProperties = this.fetchProperties.bind(this);
+    this.menuChange = this.menuChange.bind(this);
   }
 
+  menuChange (menuValue) {
+    console.log(menuValue);
+    this.setState( { suburb: menuValue })
+  }
 
   // fetchProperties( suburb, landsize, bedrooms, bathrooms, parking, price ) {
   //   axios.get(SERVER_URL).then(function (results){
@@ -50,22 +58,19 @@ class Search extends Component {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
           console.log(this.state);
-        } else if ( _.isMatch(results.data[i], {suburb: suburb})
-        && (_.isMatch(results.data[i], {landsize: landsize}))) {
-          arrayProperties.push(results.data[i]);
-          console.log(arrayProperties);
-          console.log(this.state);
-        } else if ( _.isMatch(results.data[i], {suburb: suburb})
-        && (_.isMatch(results.data[i], {bedrooms: bedrooms}))) {
-          arrayProperties.push(results.data[i]);
-          console.log(arrayProperties);
-          console.log(this.state);
-        } else if ( _.isMatch(results.data[i], {suburb: suburb})
+        } else if (_.isMatch(results.data[i], {suburb: suburb})
+        && (_.isMatch(results.data[i], {landsize: landsize}))
         && (_.isMatch(results.data[i], {bathrooms: bathrooms}))) {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
           console.log(this.state);
-        } else if ( _.isMatch(results.data[i], {suburb: suburb})) {
+        } else if (_.isMatch(results.data[i], {suburb: suburb})
+        && (_.isMatch(results.data[i], {bedrooms: bedrooms}) || _.isMatch(results.data[i], {bathrooms: bathrooms}))) {
+          arrayProperties.push(results.data[i]);
+          console.log(arrayProperties);
+          console.log(this.state);
+        } else if (_.isMatch(results.data[i], {suburb: suburb})
+        && _.isMatch(results.data[i], {landsize: landsize})) {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
           console.log(this.state);
@@ -79,9 +84,9 @@ class Search extends Component {
     return (
       <React.Fragment>
         <h2>Search for a property</h2>
-        <PropertySearch onSubmit={ this.fetchProperties }/>
+        <PropertySearch onSubmit={ this.fetchProperties } menuChange={ this.menuChange }/>
         <Results properties={ this.state.properties }/>
-        <MapResults />
+        <MapResults suburb={ this.state.suburb }/>
       </React.Fragment>
     );
   }
@@ -108,6 +113,9 @@ class PropertySearch extends Component {
   _handleChangeSuburb(e) {
     this.setState( { suburb: e.target.value
     } );
+    // console.log("the value just selected", e.target.value);
+    // console.log("this.state - one behind", this.state.suburb);
+    this.props.menuChange(e.target.value)
   }
 
   _handleChangeLandsize(e) {
