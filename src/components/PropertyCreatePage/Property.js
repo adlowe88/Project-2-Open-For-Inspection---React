@@ -65,23 +65,23 @@ class PropertiesForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this._handleSubmit}>
+      <form onSubmit={this._handleSubmit} className= "prop-form">
 
-        <input type="text" value={this.state.address} onChange={this._handleChangeAddress} placeholder="address"  />
+        <input type="text" value={this.state.address} onChange={this._handleChangeAddress} placeholder="Address"  />
 
-        <input type="text" value={this.state.suburb} onChange={this._handleChangeSuburb} placeholder="suburb"  />
+        <input type="text" value={this.state.suburb} onChange={this._handleChangeSuburb} placeholder="Suburb"  />
 
-        <input type="text" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="landsize"  />
+        <input type="text" value={this.state.landsize} onChange={this._handleChangeLandsize} placeholder="Landsize"  />
 
-        <input type="text" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="bedrooms"  />
+        <input type="text" value={this.state.bedrooms} onChange={this._handleChangeBedrooms} placeholder="Bedrooms"  />
 
-        <input type="text" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="bathrooms"  />
+        <input type="text" value={this.state.bathrooms} onChange={this._handleChangeBathrooms} placeholder="Bathrooms"  />
 
-        <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="private parking"  />
+        <input type="text" value={this.state.private_parking} onChange={this._handleChangePrivateParking} placeholder="Private Parking"  />
 
-        <input type="text" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="expected price"  />
+        <input type="text" value={this.state.expected_price} onChange={this._handleExpectedPrice} placeholder="Expected Price"  />
 
-        <input type="submit" value="create property"/>
+        <input type="submit" value="Create Property" className = "prop-form-submit" />
 
       </form>
     );
@@ -114,10 +114,12 @@ class Property extends Component {
 
   render() {
     return (
-      <div>
-        <h1>properties website</h1>
-        <p><Link to="/property">Property</Link></p>
-        <p><Link to="/search">Search</Link></p>
+      <div className = "property-page">
+        <h1>Add Property</h1>
+        <div className = "fake-nav">
+          <h2><Link to="/">Home</Link></h2>
+          <h2><Link to="/search">Search Property</Link></h2>
+        </div>
         <PropertiesForm onSubmit={ this.createProperty }/>
         <Results properties={ this.state.properties }/>
       </div>
@@ -126,3 +128,4 @@ class Property extends Component {
 }
 
 export default Property;
+// <Link to="/"><img src={image} alt="logo" className = "prop-logo" /></Link>

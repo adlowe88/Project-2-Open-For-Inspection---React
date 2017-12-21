@@ -5,12 +5,15 @@ const AUCTION_URL = 'http://localhost:5000/auctions.json';
 
 function AuctionList(props) {
   return (
-    <div>
-      { props.auctions.map( s => <p key={s.price}><span>Address: {s.address}</span>
+    <div className = "live-auction">
+      <h3>Address: {props.auctions.address}</h3>
+      <div>
+        { props.auctions.map( s => <p key={s.price}>
            <span>User Name: {s.userName}</span>
            <span> Price : {s.price} </span>
            <span> Create at :{s.time}</span>
         </p> ) }
+      </div>
     </div>
   );
 }
@@ -110,15 +113,17 @@ class Auction extends Component {
   render(){
     return(
       <div>
-      <AuctionList  auctions = {this.state.auctions}  />
-      <br/>
-      <br/>
-      <form className = 'auction-form' onSubmit={this._handleSubmit}>
-      <label> Price:
-      <input value = {this.state.price} onChange = {this._handleChangePrice}/>
-      </label>
-      <input type = 'submit' value = 'Post' className = 'auction-button' />
-      </form>
+        <AuctionList  auctions = {this.state.auctions} />
+          <br/>
+          <br/>
+        <form className = 'auction-form' onSubmit={this._handleSubmit}>
+          <label> Price:
+          <input value = {this.state.price} onChange = {this._handleChangePrice}/>
+        </label>
+          <input type = 'submit' value = 'Post' className = 'auction-button' />
+        </form>
+
+        <iframe allowvr src="https://adlowe88.github.io/Nora-VR/Nora-VR/vr/" width="700" height="480" />
       </div>
     )
   }
