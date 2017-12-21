@@ -2,9 +2,12 @@ import React, { PureComponent as Component } from 'react';
 import ReactDOM from 'react-dom'
 import GoogleApiComponent from './GoogleApiComponent'
 import axios from 'axios';
+import PropTypes from 'prop-types';
 
 
 export class Map extends React.Component {
+
+
   componentDidUpdate(prevProps, prevState) {
     if (prevProps.google !== this.props.google) {
       this.loadMap();
@@ -26,14 +29,22 @@ export class Map extends React.Component {
       const node = ReactDOM.findDOMNode(mapRef);
 
       let zoom = 14;
-      // let lat = 37.774929;
-      // let lng = -122.419416;
-      const center = new maps.LatLng( this.props.centerCoords );
+      let lat = 37.774929;
+      let lng = -122.419416;
+      const center = new maps.LatLng(lat, lng);
       const mapConfig = Object.assign({}, {
         center: center,
         zoom: zoom
       })
       this.map = new maps.Map(node, mapConfig);
+
+      let marker = new google.maps.Marker ({
+          position: { lat: -33.88, lng: 151.2 },
+          map: this.map,
+          label: "House1",
+          url: 'http://www.smh.com.au'
+        });
+
     }
   }
   render() {
@@ -47,6 +58,10 @@ export class Map extends React.Component {
 
 }
 
+////////////////////
+
+
+////////////////
 
 export class Container extends React.Component {
 
@@ -61,43 +76,30 @@ export class Container extends React.Component {
           "1 Market Street Sydney, NSW 2000"
         ],
         center: { lat: -33.88, lng: 151.2 }
+
       }
-      this._geoCoder = this._geoCoder.bind(this)
+      this._placeMarker = this._placeMarker.bind(this)
       this._clickHandler = this._clickHandler.bind(this)
     }
 
 
   _clickHandler(address) {
-    console.log(this._geoCoder(address));
+    this._placeMarker(address)
   }
 
-  _geoCoder(address) {
+  _placeMarker(address) {
     console.log("address is the passed in argument: ", address);
     let searchUrl = `http://maps.googleapis.com/maps/api/geocode/json?address=${address}&=AIzaSyB7nJABK2HEiQKo4V-FCEMWX5xag8vVJeA`
     let coords = { lat:0, lng: 0 }
-    //
-    // axios.get(searchUrl).then( results => {
-    //   this.setState( {center: {
-    //     lat: results.data.results[0].geometry.location.lat,
-    //     lng: results.data.results[0].geometry.location.lng
-    //   }})
-    //   console.log(this.state.center);
-    // } );
-
-
-
 
     axios.get(searchUrl).then( results => {
       coords.lat = results.data.results[0].geometry.location.lat
       coords.lng =  results.data.results[0].geometry.location.lng
-      // coords.lat = 5
-      // coords.lng =  4
-      console.log(coords)
-      return coords
+
+      console.log("will have to call the marker stuff from here blah blah ", coords)
+
     } );
 
-
-    //////
   }
 
   render() {
@@ -115,7 +117,7 @@ export class Container extends React.Component {
     return (
       <div>
       <div style={style}>
-        <Map google={this.props.google} centerCoords={ this.state.center }/>
+        <Map google={this.props.google} centerCoords={ this.state.suburb }/>
       </div>
         <div>
           <button onClick={ () => {this._clickHandler("46 thorn street pennant hills nsw 2120")} }>button for testing</button>
