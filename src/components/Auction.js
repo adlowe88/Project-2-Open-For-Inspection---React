@@ -18,12 +18,12 @@ function AuctionList(props) {
 
 
 class Auction extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       price :0,
       user_id : 1,
-      property_id :1,
+      property_id: props.match.params.property_id,
       auctions :[],
       priceMax : 0,
       auction:{}
@@ -36,6 +36,7 @@ class Auction extends Component {
 
   componentWillMount() {
     // console.log('mounting');
+    console.log('mounting', this.state.params);
     this.fetchInfor().then( function () {
       // console.log('finished')
     });
