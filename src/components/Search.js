@@ -7,7 +7,6 @@ import _ from 'underscore';
 import Results from './Results';
 import MapResults from './MapResults';
 
-
 const SERVER_URL = 'http://localhost:5000/properties.json'
 
 class Search extends Component {
@@ -54,14 +53,11 @@ class Search extends Component {
     axios.get(SERVER_URL).then(function (results) {
       let arrayProperties = [];
       for (let i = 0; i < results.data.length; i++) {
-        if ( _.isMatch(results.data[i], {suburb: suburb}) && _.isMatch(results.data[i], {landsize: parseInt(landsize)})
-        && _.isMatch(results.data[i], {bedrooms: parseInt(bedrooms)})
-        && _.isMatch(results.data[i], {bathrooms: parseInt(bathrooms)})
-        && _.isMatch(results.data[i], {parking: parking})
+        if ( _.isMatch(results.data[i], {suburb: suburb})
             ) {
           arrayProperties.push(results.data[i]);
           console.log(arrayProperties);
-          console.log(this.state);
+          // console.log(this.state);
         }
       }
       this.setState({properties : arrayProperties})
@@ -139,7 +135,7 @@ class PropertySearch extends Component {
           <option value="Sydney">Sydney</option>
         </select>
 
-        <input type="number" placeholder="landsize" onChange={ this._handleChangeLandsize } />
+        <input type="text" placeholder="landsize" onChange={ this._handleChangeLandsize } />
 
         <input type="number" placeholder="bedrooms" onChange={ this._handleChangeBedrooms }  />
 
