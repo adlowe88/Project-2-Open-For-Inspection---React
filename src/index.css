@@ -1,13 +1,98 @@
-<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.menu-enter {
+  max-height: 0px;
+  -webkit-transition: max-height 1s ease;
+  overflow: hidden; }
+
+.menu-enter.menu-enter-active {
+  height: auto;
+  max-height: 100px; }
+
+.menu-leave {
+  max-height: 100px;
+  -webkit-transition: max-height 1s ease; }
+
+.menu-leave.menu-leave-active {
+  overflow: hidden;
+  max-height: 0px; }
+
+ul {
+  border: #ababab solid 1px;
+  width: 70%;
+}
+
 
 body {
   margin: 50px;
   padding: 0;
+  font-family: 'Open Sans', sans-serif;
+  /* background: url('https://i.imgur.com/2nLpELR.jpg');
+  background-size: cover; */
 }
 
 label {
 
   font-size: 13px;
+}
+
+.t2 {
+    /*height: inherit;*/
+    padding: 8% 5% 5% 3%;
+    /*top: 55px;*/
+
+    /*To support older browsers*/
+    height: 100%;
+    width: 100%;
+
+    margin-top: -4%;
+    margin-left: -4%;
+
+    /* Set the height to match that of the viewport. */
+    height: 100vh;
+
+    /* Set the width to match that of the viewport. */
+    width: 100vw;
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+.fixednav {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* aligns links vertically */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  height: 60px;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.leftnav {
+  flex-grow: 1; /* this is the important bit */
+  padding-top: 0.2em;
+}
+
+.rightnav {
+  padding: 1em;
+}
+
+.home-page {
+  background: url('https://i.imgur.com/2nLpELR.jpg');
+  background-size: cover;
+}
+
+/*//////////////////////////////////Home Page/////////////////////////////////*//
+
+
+div.search-div {
+  border: 2px solid black;
+  width: 33%;
 }
 
 .predict-form {
@@ -32,3 +117,27 @@ label {
 .predict-input{
   width: 100px;
 }
+
+.results-grid span {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+input {
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+}
+
+
+.map {
+  height: 300px;
+}
+
+@media screen and (min-width: 1024px){
+    .map {
+        height: 500px;
+    }
+}
+/* These (map and @media) are from a different tutorial. might not be needed??? */
+
+/*///////////////////////////////Property Page////////////////////////////////*/
