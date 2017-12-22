@@ -46,18 +46,11 @@ body {
   min-height: 1000px;
 }
 
-.page-logo {
-  position: absolute;
-  top: 2%;
-  left: 3%;
-  width: 16%;
-  max-height: 29%;
-}
-
 .logo1 {
-  position: relative;
-  width: 69%;
-  margin: 0 auto;
+  position: absolute;
+  width: 18%;
+  top: 2%;
+  max-height: 23%;
 }
 
 
@@ -72,6 +65,7 @@ footer {
   opacity: 0.8;
   text-align: center;
   color: #f0750f;
+  transition: all 1s;
 }
 
 footer h3 {
@@ -79,6 +73,15 @@ footer h3 {
   padding: 1.3% 3.3%;
   letter-spacing: 2px;
   font-size: 23px;
+}
+
+footer h3:hover {
+  color: white;
+  -webkit-text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
+  -moz-text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
+  -ms-text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
+  -o-text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
+  text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
 }
 
 /*///////////////////////////    Home Page    ///////////////////////////////*/
@@ -275,6 +278,16 @@ border-radius: 5px;
   font-family: 'Open Sans', sans-serif;
   text-decoration: none;
   color: #f0750f;
+  transition: all 1s;
+}
+
+.fake-nav h2 a:hover {
+  color: white;
+-webkit-text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
+-moz-text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
+-ms-text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
+-o-text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
+text-shadow: 0 0 10px #ff401a, 0 0 50px #ff9b1a;
 }
 
 .prop-form {
@@ -299,10 +312,12 @@ input.prop-form-submit {
 
 .prop-image {
   width: 100%;
-  height: 120%;
-  margin-bottom: 18%;
-  padding-bottom: 123px;
-  margin-top: -22%;
+  height: 130px;
+  margin-bottom: -9%;
+  margin-top: -13%;
+}
+
+img.prop-image {
 }
 
 /*////////////////////////       Auction Page      //////////////////////////*/

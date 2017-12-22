@@ -41,7 +41,7 @@ function Results(props) {
         <h3 className="results-landsize"><strong>Landsize</strong></h3>
         <h3 className="results-bedroom"><strong>Bedrooms</strong></h3>
         <h3 className="results-bathroom"><strong>Bathrooms</strong></h3>
-        <h3 className="results-privateparking"><strong>Private parking</strong></h3>
+        <h3 className="results-privateparking"><strong>Private Parking</strong></h3>
 
       </div>
 
@@ -50,15 +50,14 @@ function Results(props) {
 
       { props.properties.map( f =>
         <div className="results-grid" key={ f.id }>
-          <img src={f.photo} alt="logo" className = "prop-image"/>
+          <Link to={{pathname: '/auction/' + f.id}}><img src={f.photo} alt="logo" className = "prop-image"/></Link>
           <span className="results-address">{ f.address }</span>
           <span className="results-suburb">{ f.suburb }</span>
-          <span className="results-landsize">{ f.landsize }</span>
+          <span className="results-landsize">{ f.landsize }&#13217;</span>
           <span className="results-bedroom">{ f.bedrooms }</span>
           <span className="results-bathroom">{ f.bathrooms }</span>
           <span className="results-privateparking">{ f.private_parking + '' }</span>
 
-          <span><Link to={{pathname: '/auction/' + f.id}}>Auction</Link></span>
         </div>
       )
      }

@@ -17,7 +17,7 @@ function AuctionList(props) {
            <span> Price : {s.price} </span>
            <span> Create at :{s.time}</span>
         </p> ) }
-        <h2><Link to="//localhost:3000">Chat Room</Link></h2>
+        <h2><a href="http://localhost:3000">Chat Room</a></h2>
       </div>
     </div>
   );
@@ -109,11 +109,6 @@ class Auction extends Component {
   );
   // this.setState({price:0});
 }
-
-
-
-
-
 
   render(){
     return(

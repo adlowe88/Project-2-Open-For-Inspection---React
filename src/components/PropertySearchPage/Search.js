@@ -86,9 +86,7 @@ class Search extends Component {
         <React.Fragment>
           <h1>Search for a property</h1>
 
-          <div className="page-logo">
-            <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png" alt="logo" className = "logo1" /></Link>
-          </div>
+            <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png?1" alt="logo" className = "logo1" /></Link>
 
           <div className = "fake-nav">
             <h2><Link to="/">Home</Link></h2>

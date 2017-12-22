@@ -2,6 +2,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   height: 123px;
+  margin-bottom: 15px;
+}
+
+.results-photo {
+  margin-bottom: 2px;
 }
 
 .property-results h1 {
@@ -9,6 +14,7 @@
 }
 
 .results-grid.headings {
+  margin-bottom: 0;
   margin-left: 5%;
 }
 
@@ -23,23 +29,23 @@
 }
 
 .results-grid span.results-suburb {
-  margin-right: 10%;
+  margin-right: 23%;
 }
 
 .results-grid span.results-landsize {
-  margin-right: 12%;
+  margin-right: 25%;
 }
 
 .results-grid span.results-bedroom {
-  margin-right: 14%;
+  margin-right: 31%;
 }
 
 .results-grid span.results-bathroom {
-  margin-right: 21%;
+  margin-right: 38%;
 }
 
 .results-grid span.results-privateparking {
-  margin-right: 17%;
+  margin-right: 38%;
 }
 
 .results-grid span.results-expectedprice {

@@ -116,9 +116,7 @@ class Property extends Component {
     return (
       <div className = "property-page">
 
-        <div className="page-logo">
-          <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png" alt="logo" className = "logo1" /></Link>
-        </div>
+        <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png?1" alt="logo" className = "logo1" /></Link>
 
         <h1>Add Property</h1>
         <div className = "fake-nav">
