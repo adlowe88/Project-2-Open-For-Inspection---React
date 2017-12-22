@@ -209,7 +209,7 @@ border-radius: 5px;
   font-family: 'Abril Fatface', cursive;
   font-style: italic;
   font-weight: 800;
-  margin: 13% 0 0 0;
+  margin: 13% 0 -2% 0;
   padding: 15px;
   width: 43%;
   text-transform: uppercase;
@@ -217,6 +217,7 @@ border-radius: 5px;
   letter-spacing: 5px;
   background-color: #f0750f;
   color: white;
+
 }
 
 .predict-select{
@@ -235,6 +236,10 @@ border-radius: 5px;
 
 .predict-search {
   margin-bottom: 5px;
+}
+
+.predict-result h5 {
+  font-size: 28px;
 }
 
 

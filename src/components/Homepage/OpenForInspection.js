@@ -14,7 +14,7 @@ class OpenForInspection extends Component {
       position: 'absolute',
       top: '29.3%',
       left: '20%',
-      height: '50%',
+      height: '55%',
       backgroundColor: 'white',
       opacity: '0.8',
       borderRadius: '8px',

@@ -118,15 +118,15 @@ class PredictPrice extends Component {
     }
     result = result.toFixed(2);
     console.log(result);
-    this.setState({name:"Predict Price is :"})
+    this.setState({name:"Property Evaluation:"})
     this.setState({predicPrice:result+'K'});
   }
 
   render(){
     return(
-      <div>
+      <div class = "predict-result">
       <PredicForm onSubmit={this.predicPriceFunction}/>
-      <p>{this.state.name} {this.state.predicPrice} </p>
+      <h5>{this.state.name} {this.state.predicPrice} </h5>
       </div>
 
     )
