@@ -13,6 +13,7 @@ function AuctionList(props) {
            <span> Price : {s.price} </span>
            <span> Create at :{s.time}</span>
         </p> ) }
+        <h2><Link to="localhost:3000">Chat Room</Link></h2>
       </div>
     </div>
   );
