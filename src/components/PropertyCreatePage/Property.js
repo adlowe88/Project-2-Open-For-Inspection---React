@@ -115,6 +115,11 @@ class Property extends Component {
   render() {
     return (
       <div className = "property-page">
+
+        <div className="page-logo">
+          <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png" alt="logo" className = "logo" /></Link>
+        </div>
+
         <h1>Add Property</h1>
         <div className = "fake-nav">
           <h2><Link to="/">Home</Link></h2>
