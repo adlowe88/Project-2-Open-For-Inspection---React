@@ -284,6 +284,14 @@ input.prop-form-submit {
   color: white;
 }
 
+.prop-image {
+  width: 100%;
+  height: 120%;
+  margin-bottom: 18%;
+  padding-bottom: 123px;
+  margin-top: -22%;
+}
+
 /*////////////////////////       Auction Page      //////////////////////////*/
 
 

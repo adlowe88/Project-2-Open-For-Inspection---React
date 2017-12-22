@@ -1,12 +1,16 @@
 import React, {PureComponent as Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const AUCTION_URL = 'http://localhost:5000/auctions.json';
 
 function AuctionList(props) {
+  const a = props.auctions[0];
+  if (a === undefined) return '';
+  console.log(a);
   return (
     <div className = "live-auction">
-      <h3>Address: {props.auctions.address}</h3>
+      <h3>Address: {props.auctions[0].address}</h3>
       <div>
         { props.auctions.map( s => <p key={s.price}>
            <span>User Name: {s.userName}</span>
@@ -114,6 +118,11 @@ class Auction extends Component {
   render(){
     return(
       <div>
+        <div className = "fake-nav">
+          <h2><Link to="/">Home</Link></h2>
+          <h2><Link to="/property">Create a Property</Link></h2>
+          <h2><Link to="/search">Search for a Property</Link></h2>
+        </div>
         <AuctionList  auctions = {this.state.auctions} />
           <br/>
           <br/>

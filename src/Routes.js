@@ -10,6 +10,8 @@ import PredictPrice from './components/Homepage/PredictPrice';
 
 
 
+
+
 const Routes = (
   <Router>
     <div>
@@ -17,7 +19,11 @@ const Routes = (
       <Route exact path="/property" component={ Property }/>
       <Route exact path="/search" component={ Search }/>
       <Route exact path="/predict" component={ PredictPrice }/>
+
+      <Route exact path="/auction" component={ Auction }/>
+
       <Route path="/auction/:property_id" component={ Auction }/>
+
     </div>
   </Router>
 )

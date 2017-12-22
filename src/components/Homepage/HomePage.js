@@ -1,5 +1,4 @@
 import React, { PureComponent as Component } from 'react';
-import Login from './Login';
 import OpenForInspection from './OpenForInspection';
 import About from './About';
 import Footer from './Footer';
@@ -7,6 +6,10 @@ import Footer from './Footer';
 import PreditPrice from './PredictPrice';
 
 import Property from '../PropertyCreatePage/Property';
+
+
+import SignupForm from '../../SignupForm';
+import {Link} from 'react-router-dom';
 
 
 

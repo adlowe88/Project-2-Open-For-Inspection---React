@@ -59,7 +59,7 @@ class PredicForm extends Component {
         </select>
         </label><br/>
 
-        <label className = "predict-search"><span className = "predict-label">Bedrooms &nbsp;&nbsp;&nbsp;&nbsp;</span>
+        <label className = "predict-search"><span className = "predict-label">Bedrooms &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
         <select className = "predict-select" value={this.state.num_of_BedRoom} onChange={ this._handleChange_num_of_bedRoom} className = 'predict-select'>
           <option value = "">Select</option>
           <option value = "1">1</option>
@@ -71,7 +71,7 @@ class PredicForm extends Component {
         </select>
         </label><br/>
 
-        <label className = "predict-search"><span className = "predict-label">Bathrooms &nbsp;&nbsp;</span>
+        <label className = "predict-search"><span className = "predict-label">Bathrooms &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
         <select className = "predict-select" value ={this.state.num_of_BathRoom} onChange={ this._handleChange_num_of_bathRoom} className = 'predict-select'>
           <option value = "">Select</option>
           <option value = "1">1</option>
