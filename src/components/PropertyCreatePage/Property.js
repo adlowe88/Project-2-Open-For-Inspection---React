@@ -117,7 +117,7 @@ class Property extends Component {
       <div className = "property-page">
 
         <div className="page-logo">
-          <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png" alt="logo" className = "logo" /></Link>
+          <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png" alt="logo" className = "logo1" /></Link>
         </div>
 
         <h1>Add Property</h1>

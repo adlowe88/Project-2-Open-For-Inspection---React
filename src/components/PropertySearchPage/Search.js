@@ -87,7 +87,7 @@ class Search extends Component {
           <h1>Search for a property</h1>
 
           <div className="page-logo">
-            <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png" alt="logo" className = "logo" /></Link>
+            <Link to="/"><img src="https://i.imgur.com/DwQZHkO.png" alt="logo" className = "logo1" /></Link>
           </div>
 
           <div className = "fake-nav">

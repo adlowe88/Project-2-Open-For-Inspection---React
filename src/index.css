@@ -48,10 +48,18 @@ body {
 
 .page-logo {
   position: absolute;
-  top: -1%;
-  left: -4%;
-  width: 60%;
+  top: 2%;
+  left: 3%;
+  width: 16%;
+  max-height: 29%;
 }
+
+.logo1 {
+  position: relative;
+  width: 69%;
+  margin: 0 auto;
+}
+
 
 /*////////////////////////////     Footer    /////////////////////////////////*/
 footer {
