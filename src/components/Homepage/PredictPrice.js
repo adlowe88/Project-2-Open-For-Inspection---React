@@ -118,8 +118,8 @@ class PredictPrice extends Component {
     }
     result = result.toFixed(2);
     console.log(result);
-    this.setState({name:"Property Evaluation:"})
-    this.setState({predicPrice:result+'K'});
+    this.setState({name:"Property Evaluation:"});
+    this.setState({predicPrice:((+result)/1000).toFixed(2)+'M'});
   }
 
   render(){
