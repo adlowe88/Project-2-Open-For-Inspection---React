@@ -1,6 +1,7 @@
 .results-grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  height: 123px;
 }
 
 .property-results h1 {
