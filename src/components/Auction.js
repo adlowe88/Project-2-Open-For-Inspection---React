@@ -1,4 +1,5 @@
 import React, {PureComponent as Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 const AUCTION_URL = 'http://localhost:5000/auctions.json';
@@ -116,6 +117,11 @@ class Auction extends Component {
   render(){
     return(
       <div>
+        <div className = "fake-nav">
+          <h2><Link to="/">Home</Link></h2>
+          <h2><Link to="/property">Create a Property</Link></h2>
+          <h2><Link to="/search">Search for a Property</Link></h2>
+        </div>
         <AuctionList  auctions = {this.state.auctions} />
           <br/>
           <br/>

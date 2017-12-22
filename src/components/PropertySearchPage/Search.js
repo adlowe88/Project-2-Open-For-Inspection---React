@@ -87,7 +87,7 @@ class Search extends Component {
           <h1>Search for a property</h1>
           <div className = "fake-nav">
             <h2><Link to="/">Home</Link></h2>
-            <h2><Link to="/search">Add Property</Link></h2>
+            <h2><Link to="/property">Add Property</Link></h2>
           </div>
           <PropertySearch onSubmit={ this.fetchProperties } menuChange={ this.menuChange }/>
           <Results properties={ this.state.properties }/>
