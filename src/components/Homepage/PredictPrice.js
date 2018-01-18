@@ -124,7 +124,7 @@ class PredictPrice extends Component {
 
   render(){
     return(
-      <div class = "predict-result">
+      <div className = "predict-result">
       <PredicForm onSubmit={this.predicPriceFunction}/>
       <h5>{this.state.name} {this.state.predicPrice} </h5>
       </div>
